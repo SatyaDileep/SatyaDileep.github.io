@@ -1,5 +1,27 @@
----
-layout: default
----
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{{ page.title | default: site.title }}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+</head>
+<body class="{{ page.theme | default: site.theme }}">
 
-# Welcome to My Portfolio
+<header>
+  <nav>
+    <a href="{{ '/' | relative_url }}">About</a>
+    <a href="{{ '/ideas' | relative_url }}">Ideas</a>
+    <a href="{{ '/micro-apps' | relative_url }}">Micro‑Apps</a>
+    <a href="{{ '/blog' | relative_url }}">Blog</a>
+  </nav>
+</header>
+
+{{ content }}
+
+<footer>
+  © {{ site.time | date: "%Y" }} {{ site.title }} • <a href="https://github.com/{{ site.github.username }}">GitHub</a> • <a href="https://linkedin.com/in/{{ site.linkedin }}">LinkedIn</a>
+</footer>
+
+</body>
+</html>
