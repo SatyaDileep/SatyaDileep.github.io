@@ -11,7 +11,7 @@ title: Home
   </div>
   <div class="hero-avatar">
     <img
-      src="{{ '/assets/dileep11.png' | relative_url }}"
+      src="{{ '/assets/dileep11.jpg' | relative_url }}"
       alt="Satya Dileep Kumar Thotakura"
       class="avatar"
       loading="lazy" />
