@@ -1,5 +1,5 @@
 title: "AI Product Manager Portfolio"
 description: "Showcasing my AI‑product ideas, micro‑apps and thoughts."
-theme: jekyll-theme-glass
+theme: jekyll-glass
 markdown: kymdown
 permalink: /:year/:month/:day/:title/
