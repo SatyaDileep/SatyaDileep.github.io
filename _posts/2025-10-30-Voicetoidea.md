@@ -5,8 +5,6 @@ description: "A practical workflow that transforms spoken notes into canvases, m
 tags: [product-management, workflows, agentic-ai, productivity]
 ---
 
-![Preview]({{ '/assets/images/voice-to-idea-hero.jpg' | relative_url }})
-
 ### The problem
 Great ideas arrive away from keyboards, and unstructured notes are hard to convert into shareable product artifacts.  
 
