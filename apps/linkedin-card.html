@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>LinkedIn Card Creator</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {font-family:sans-serif;max-width:600px;margin:2rem auto;padding:0 1rem;}
+    .preview {border:1px solid #ddd;padding:1rem;margin-top:1rem;background:#fff;}
+    .markdown {background:#f9f9f9;padding:.5rem;font-family:monospace;white-space:pre-wrap;}
+    label {display:block;margin-top:1rem;}
+    input[type=text], textarea {width:100%;padding:.4rem;margin-top:.2rem;}
+    .controls {margin-top:1rem;}
+  </style>
+</head>
+<body>
+
+<h1>LinkedIn Card Creator</h1>
+
+<div class="controls">
+  <label>Title:
+    <input type="text" id="title" placeholder="e.g. New AI Tool">
+  </label>
+
+  <label>Subtitle:
+    <input type="text" id="subtitle" placeholder="e.g. Boost your productivity">
+  </label>
+
+  <label>Image URL (optional):
+    <input type="text" id="image" placeholder="https:       
+  </label>
+
+  <label>Link URL:
+    <input type="text" id="link" placeholder="https://yourapp.com">
+  </label>
+
+  <label>Link Text:
+    <input type="text" id="linkText" placeholder="Learn more">
+  </label>
+
+  <label>Color (hex):
+    <input type="color" id="color" value="         
+  </label>
+</div>
+
+<div class="preview" id="preview"></div>
+
+<textarea class="markdown" id="markdown" rows="6" readonly></textarea>
+
+<script>
+  const fields = ['title','subtitle','image','link','linkText','color'];
+  const $ = id => document.getElementById(id);
+
+  function render() {
+    const vals = fields.reduce((o,f)=>{o[f]=$(f).value;return o;},{});
+    const card = `
+<div style="border:1px solid #ddd;border-radius:8px;overflow:hidden;font-family:sans-serif;background:#fff;">
+  ${vals.image ? `<img src="${vals.image}" style="width:100%;height:150px;object-fit:cover;">` : ''}
+  <div style="padding:1rem;">
+    <h2 style="margin:0 0 .5rem 0;">${vals.title}</h2>
+    <p style="margin:0 0 1rem 0;color:                           
+    <a href="${vals.link}" target="_blank" style="display:inline-block;padding:.5rem 1rem;background:${vals.color};color:#fff;border-radius:4px;text-decoration:none;">${vals.linkText}</a>
+  </div>
+</div>`;
+    const md = `[!${vals.title}](${vals.link})\n\n**${vals.title}**\n${vals.subtitle}\n${vals.linkText}`;
+
+    $('preview').innerHTML = card;
+    $('markdown').value = md;
+  }
+
+  fields.forEach(f => $(f).addEventListener('input', render));
+  render();
+</script>
+
+</body>
+</html>
