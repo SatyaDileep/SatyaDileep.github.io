@@ -1,106 +1,803 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>LinkedIn Card Creator</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <style>
-    body {
-      font-family:sans-serif;
-      max-width:600px;
-      margin:2rem auto;
-      padding:0 1rem;
-      background:#f5f5f5;
-    }
-    .preview {
-      border:1px solid #ddd;
-      padding:1rem;
-      margin-top:1rem;
-      background:#fff;
-    }
-    .markdown {
-      background:#f9f9f9;
-      padding:.5rem;
-      font-family:monospace;
-      white-space:pre-wrap;
-      margin-top:1rem;
-    }
-    label {display:block;margin-top:1rem;}
-    input[type=text],
-    textarea,
-    input[type=color] {
-      width:100%;
-      padding:.4rem;
-      margin-top:.2rem;
-      box-sizing:border-box;
-    }
-    .controls {margin-top:1rem;}
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Card Generator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #1a1a1a;
+            color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        #app-container {
+            display: grid;
+            gap: 24px;
+            max-width: 1600px;
+            width: 100%;
+        }
+
+        #input-panel {
+            grid-area: input;
+            background: #2a2a2a;
+            border-radius: 12px;
+            padding: 24px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .input-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .input-group label {
+            font-weight: 500;
+            color: #a0a0a0;
+        }
+
+        .input-group input[type="text"],
+        .input-group input[type="range"],
+        .input-group textarea,
+        .input-group input[type="color"] {
+            background: #1a1a1a;
+            border: 1px solid #4a4a4a;
+            border-radius: 8px;
+            padding: 12px;
+            color: #f0f0f0;
+            transition: border-color 0.2s;
+        }
+
+        /* Style for color input */
+        .input-group input[type="color"] {
+            padding: 4px;
+            height: 44px;
+            width: 100%;
+        }
+        
+        /* Style for range input */
+        .input-group input[type="range"] {
+            -webkit-appearance: none;
+            height: 8px;
+            padding: 0;
+            background: #4a4a4a;
+            cursor: pointer;
+        }
+
+        .input-group input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #5b21b6;
+            cursor: pointer;
+            transition: background-color 0.2s;
+            margin-top: -6px; /* Adjust for thumb position */
+        }
+        
+        .input-group input[type="range"]::-moz-range-thumb {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #5b21b6;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        .input-group input[type="text"]:focus,
+        .input-group textarea:focus {
+            outline: none;
+            border-color: #6a6a6a;
+        }
+
+        #gradient-selector {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(40px, 1fr));
+            gap: 8px;
+        }
+
+        .gradient-option {
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            cursor: pointer;
+            border: 2px solid transparent;
+            transition: border-color 0.2s, transform 0.2s;
+        }
+
+        .gradient-option.selected {
+            border-color: #f0f0f0;
+            transform: scale(1.1);
+        }
+
+        #card-preview-container {
+            grid-area: preview;
+            background: #2a2a2a;
+            border-radius: 12px;
+            padding: 24px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative; /* Added for loader positioning */
+        }
+
+        #card {
+            width: 100%;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 16px 48px rgba(0, 0, 0, 0.6);
+            transition: background 0.5s;
+        }
+        
+        /* New glass effect class */
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+            transition: background 0.2s, border 0.2s, box-shadow 0.2s;
+        }
+
+        #card-header {
+            padding: 16px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        #card-content {
+            padding: 24px;
+        }
+        
+        #card-content .main-content {
+            padding-bottom: 24px;
+        }
+
+        #card-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+            line-height: 1.2;
+        }
+
+        #card-post {
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+        
+        #card-post p {
+            margin-bottom: 1rem;
+        }
+
+        #card-post ul, #card-post ol {
+            list-style-position: inside;
+            margin-left: 1rem;
+        }
+
+        #card-post ul {
+            list-style-type: disc;
+        }
+
+        #card-post ol {
+            list-style-type: decimal;
+        }
+
+        #highlighted-thought {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            border-left: 4px solid rgba(255, 255, 255, 0.2);
+            padding: 16px;
+            margin-top: 16px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            font-style: italic;
+            line-height: 1.4;
+        }
+
+        #card-footer {
+            padding: 16px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 16px;
+        }
+        
+        /* Styles for the integrated user info block */
+        .user-info-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            border-radius: 8px;
+            padding: 8px 12px;
+        }
+
+        #user-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #f0f0f0;
+            border: 2px solid;
+            object-fit: cover;
+        }
+
+        #user-info {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 4px;
+        }
+
+        #user-name {
+            font-weight: 600;
+        }
+
+        #user-role {
+            font-size: 0.875rem;
+        }
+
+        .cta-button {
+            background-color: #5b21b6;
+            color: #fff;
+            padding: 12px 24px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .cta-button:hover {
+            background-color: #4c1d95;
+        }
+
+        .improve-button {
+            background-color: #5b21b6;
+            color: #fff;
+            padding: 8px 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        .improve-button:hover {
+            background-color: #4c1d95;
+        }
+        
+        #linkedin-follow {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #fff;
+            background-color: #0077b5;
+            padding: 8px 12px;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: background-color 0.2s;
+        }
+
+        #linkedin-follow:hover {
+            background-color: #005582;
+        }
+
+        #loader {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: none;
+        }
+
+        #loader .spinner {
+            border: 4px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top: 4px solid #fff;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        @media (min-width: 1024px) {
+            #app-container {
+                grid-template-areas: "input preview";
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        
+        /* New CSS for dynamic text color and glass effect */
+        .dark-text {
+            color: #1a1a1a;
+        }
+        
+        .dark-text .glass-effect {
+            background: rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .dark-text #highlighted-thought {
+            background: rgba(0, 0, 0, 0.05);
+            border-left: 4px solid rgba(0, 0, 0, 0.2);
+        }
+        
+        .dark-text #user-avatar {
+            border-color: #1a1a1a !important;
+        }
+        
+        .dark-text #linkedin-follow {
+            background-color: #0077b5;
+            color: white;
+        }
+
+        /* General color for light text on dark backgrounds */
+        #card-title, #card-post, #highlighted-thought, #user-name, #user-role, #header-text, .header-icon {
+            color: #f0f0f0;
+        }
+
+        /* General color for dark text on light backgrounds */
+        .dark-text #card-title, .dark-text #card-post, .dark-text #highlighted-thought, .dark-text #user-name, .dark-text #user-role, .dark-text #header-text, .dark-text .header-icon {
+            color: #1a1a1a;
+        }
+    </style>
 </head>
 <body>
 
-<h1>LinkedIn Card Creator</h1>
+<div id="app-container">
+    <!-- Input Panel -->
+    <div id="input-panel">
+        <h2 class="text-xl font-bold text-white mb-4">Customize Your Card</h2>
+        <div class="input-group">
+            <label for="cardHeader">Card Header</label>
+            <input type="text" id="cardHeader" value="AI-Byte Series #Day24">
+        </div>
+        <div class="input-group">
+            <label for="cardTitle">Card Title</label>
+            <input type="text" id="cardTitle" value="Your catchy title here">
+        </div>
+        <div class="input-group">
+            <label for="postContent">Post Content (Markdown supported)</label>
+            <textarea id="postContent" rows="8">Lorem ipsum dolor sit amet consectetur. Ornare metus nunc purus dui proin laoreet. **Adipiscing mauris laoreet at pulvinar dui mi vitae vel malesuada.**
+            
+* This is a bullet point.
+* And another one.
+* This is an ordered list.
+1. First item
+2. Second item
+3. Third item</textarea>
+        </div>
+        <div class="input-group">
+            <label for="thoughtContent">Highlighted Thought (Optional)</label>
+            <textarea id="thoughtContent" rows="3" placeholder="Click 'Generate Thought' to get started or type your own."></textarea>
+            <button id="generateThoughtBtn" class="improve-button mt-2">Generate Thought</button>
+        </div>
+        <div class="input-group">
+            <label for="userName">User Name</label>
+            <input type="text" id="userName" value="Satya Dileep Kumar Thotakura">
+        </div>
+        <div class="input-group">
+            <label for="userRole">User Role</label>
+            <input type="text" id="userRole" value="Product Manager | Pegasystems">
+        </div>
+        <div class="input-group">
+            <label for="userImage">User Image URL</label>
+            <input type="text" id="userImage" value="https://media.licdn.com/dms/image/v2/D4D03AQGhGRSc09vlRQ/profile-displayphoto-scale_400_400/B4DZkZcUSRGkAs-/0/1757068478262?e=1759968000&v=beta&t=zEeJbDquT-9VbPCZxDdpLOOZ6yNovdu-R9550-cLYoc" placeholder="e.g., https://.../your-image.jpg">
+        </div>
+        <div class="input-group">
+            <label for="linkedinUrl">LinkedIn URL</label>
+            <input type="text" id="linkedinUrl" value="https://www.linkedin.com/in/satya-dileep-kumar-thotakura-9b25021b/" placeholder="e.g., https://linkedin.com/in/yourprofile">
+        </div>
+        <div class="input-group">
+            <label for="cardWidth">Card Width</label>
+            <input type="range" id="cardWidth" min="300" max="700" value="500">
+        </div>
+        <div class="input-group">
+            <label class="mb-2">Choose Gradient Theme</label>
+            <div id="gradient-selector"></div>
+        </div>
+        <div class="input-group">
+            <label for="textColorPicker">Text Color</label>
+            <input type="color" id="textColorPicker" value="#f0f0f0">
+        </div>
+        <div class="input-group mt-4">
+            <label class="mb-2">Improve Content with Gemini</label>
+            <div class="flex gap-4">
+                <button id="improve-emojis" class="improve-button">Add Emojis</button>
+                <button id="improve-professional" class="improve-button">Make Professional</button>
+                <button id="generateAllBtn" class="improve-button">Auto-Generate All</button>
+            </div>
+        </div>
+        <div class="input-group mt-4">
+            <button id="export-button" class="cta-button">
+                <i class="fas fa-download"></i>
+                Export Card as Image
+            </button>
+        </div>
+    </div>
 
-<div class="controls">
-  <label>Title:
-    <input type="text" id="title" placeholder="e.g. New AI Tool">
-  </label>
-
-  <label>Subtitle:
-    <input type="text" id="subtitle" placeholder="e.g. Boost your productivity">
-  </label>
-
-  <label>Image URL (optional):
-    <input type="text" id="image" placeholder="https://example.com/cover.png">
-  </label>
-
-  <label>Link URL:
-    <input type="text" id="link" placeholder="https://yourapp.com">
-  </label>
-
-  <label>Link Text:
-    <input type="text" id="linkText" placeholder="Learn more">
-  </label>
-
-  <label>Button Color:
-    <input type="color" id="color" value="#0077b5">
-  </label>
+    <!-- Card Preview Panel -->
+    <div id="card-preview-container">
+        <div id="card">
+            <div id="card-header" class="glass-effect">
+                <div class="flex items-center gap-2">
+                    <div class="w-2 h-2 bg-red-500 rounded-full"></div>
+                    <div class="w-2 h-2 bg-yellow-400 rounded-full"></div>
+                    <div class="w-2 h-2 bg-green-500 rounded-full"></div>
+                    <span id="header-text" class="text-sm text-white font-medium">AI-Byte Series #Day24</span>
+                </div>
+                <div class="flex items-center justify-center p-1 rounded-md bg-gray-600/30 text-gray-400 text-xs w-8 h-8">
+                    <i class="fas fa-code header-icon"></i>
+                </div>
+            </div>
+            <div id="card-content">
+                <div class="main-content">
+                    <h1 id="card-title" class="text-3xl font-bold">Your catchy title here</h1>
+                    <p id="card-post" class="text-base leading-relaxed mt-4"></p>
+                </div>
+                <div id="highlighted-thought"></div>
+            </div>
+            <div id="card-footer" class="glass-effect">
+                <div class="user-info-wrapper">
+                    <img id="user-avatar" src="https://media.licdn.com/dms/image/v2/D4D03AQGhGRSc09vlRQ/profile-displayphoto-scale_400_400/B4DZkZcUSRGkAs-/0/1757068478262?e=1759968000&v=beta&t=zEeJbDquT-9VbPCZxDdpLOOZ6yNovdu-R9550-cLYoc" alt="User Avatar">
+                    <div id="user-info">
+                        <span id="user-name">Satya Dileep Kumar Thotakura</span>
+                        <span id="user-role">Product Manager | Pegasystems</span>
+                    </div>
+                </div>
+                <a href="https://www.linkedin.com/in/satya-dileep-kumar-thotakura-9b25021b/" target="_blank" id="linkedin-follow">
+                    <span>Follow me</span>
+                    <i class="fab fa-linkedin"></i>
+                </a>
+            </div>
+        </div>
+        <div id="loader">
+            <div class="spinner"></div>
+        </div>
+    </div>
 </div>
 
-<div class="preview" id="preview"></div>
+<div id="message-box" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden">
+    <div class="bg-gray-800 p-6 rounded-lg shadow-xl max-w-sm w-full text-center">
+        <p id="message-text" class="text-white mb-4"></p>
+        <button id="message-close" class="px-4 py-2 bg-purple-600 rounded-lg text-white font-semibold">OK</button>
+    </div>
+</div>
 
-<textarea class="markdown" id="markdown" rows="8" readonly></textarea>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/marked@4.0.12/marked.min.js"></script>
 <script>
-  const fields = ['title','subtitle','image','link','linkText','color'];
-  const $ = id => document.getElementById(id);
+    document.addEventListener('DOMContentLoaded', () => {
+        const card = document.getElementById('card');
+        const cardTitleInput = document.getElementById('cardTitle');
+        const cardHeaderInput = document.getElementById('cardHeader');
+        const postContentInput = document.getElementById('postContent');
+        const thoughtContentInput = document.getElementById('thoughtContent');
+        const userNameInput = document.getElementById('userName');
+        const userRoleInput = document.getElementById('userRole');
+        const userImageInput = document.getElementById('userImage');
+        const linkedinUrlInput = document.getElementById('linkedinUrl');
+        const linkedinLink = document.getElementById('linkedin-follow');
+        const cardWidthInput = document.getElementById('cardWidth');
+        const textColorPicker = document.getElementById('textColorPicker');
 
-  function render() {
-    const vals = fields.reduce((o, f) => {
-      o[f] = $(f).value;
-      return o;
-    }, {});
+        const cardTitlePreview = document.getElementById('card-title');
+        const cardHeaderPreview = document.getElementById('header-text');
+        const postContentPreview = document.getElementById('card-post');
+        const highlightedThoughtPreview = document.getElementById('highlighted-thought');
+        const userNamePreview = document.getElementById('user-name');
+        const userRolePreview = document.getElementById('user-role');
+        const userImagePreview = document.getElementById('user-avatar');
+        const headerIcon = document.querySelector('.header-icon');
 
-    const card = `
-<div style="border:1px solid #ddd;border-radius:8px;overflow:hidden;font-family:sans-serif;background:#fff;">
-  ${vals.image ? `<img src="${vals.image}" alt="" style="width:100%;height:150px;object-fit:cover;">` : ''}
-  <div style="padding:1rem;">
-    <h2 style="margin:0 0 .5rem 0;">${vals.title}</h2>
-    <p style="margin:0 0 1rem 0;color:#555;">${vals.subtitle}</p>
-    <a href="${vals.link}" target="_blank" style="display:inline-block;padding:.5rem 1rem;background:${vals.color};color:#fff;border-radius:4px;text-decoration:none;">${vals.linkText}</a>
-  </div>
-</div>`;
+        const gradientSelector = document.getElementById('gradient-selector');
+        const improveEmojisBtn = document.getElementById('improve-emojis');
+        const improveProfessionalBtn = document.getElementById('improve-professional');
+        const generateThoughtBtn = document.getElementById('generateThoughtBtn');
+        const generateAllBtn = document.getElementById('generateAllBtn');
+        const exportButton = document.getElementById('export-button');
+        const loader = document.getElementById('loader');
 
-    const mdImage = vals.image ? `![${vals.title}](${vals.image})` : '';
-    const md = `${mdImage ? mdImage + '\n\n' : ''}**${vals.title}**\n${vals.subtitle}\n[${vals.linkText}](${vals.link})`;
+        const messageBox = document.getElementById('message-box');
+        const messageText = document.getElementById('message-text');
+        const messageCloseBtn = document.getElementById('message-close');
 
-    $('preview').innerHTML = card;
-    $('markdown').value = md;
-  }
+        // Combined gradients from previous favorites and new ones from the image
+        const gradients = [
+            { gradient: 'linear-gradient(135deg, #1A237E, #5B4F8B)', textColor: '#f0f0f0' },
+            { gradient: 'linear-gradient(135deg, #1D2B64, #F8CDDA)', textColor: '#f0f0f0' },
+            { gradient: 'linear-gradient(135deg, #5B21B6, #4C1D95)', textColor: '#f0f0f0' },
+            { gradient: 'linear-gradient(135deg, #163654, #2c5282)', textColor: '#f0f0f0' },
+            { gradient: 'linear-gradient(135deg, #2D4059, #6a82fb)', textColor: '#f0f0f0' },
+            { gradient: 'linear-gradient(135deg, #44806A, #1B5E20)', textColor: '#f0f0f0' },
+            { gradient: 'linear-gradient(135deg, #44005C, #5C228E)', textColor: '#f0f0f0' },
+            { gradient: 'linear-gradient(135deg, #FF6B6B, #FFCD6B)', textColor: '#1a1a1a' },
+            { gradient: 'linear-gradient(135deg, #4A00E0, #8E2DE2)', textColor: '#f0f0f0' },
+            { gradient: 'linear-gradient(135deg, #1C2B54, #3B5F99)', textColor: '#f0f0f0' },
+            { gradient: 'linear-gradient(135deg, #00A86B, #004D40)', textColor: '#f0f0f0' },
+            { gradient: 'linear-gradient(135deg, #E2B0FF, #9F2CFF)', textColor: '#1a1a1a' },
+            { gradient: 'linear-gradient(135deg, #4C93B3, #153E73)', textColor: '#f0f0f0' },
+            { gradient: 'linear-gradient(135deg, #E0B46A, #A67C4A)', textColor: '#1a1a1a' },
+            { gradient: 'linear-gradient(135deg, #B32D6A, #6A1440)', textColor: '#f0f0f0' },
+            { gradient: 'linear-gradient(135deg, #7C9861, #4E5E40)', textColor: '#f0f0f0' },
+            { gradient: 'linear-gradient(135deg, #FF7B5B, #E2483E)', textColor: '#1a1a1a' }
+        ];
 
-  fields.forEach(f => $(f).addEventListener('input', render));
-  render();
+        // Function to show a custom message box
+        function showMessage(message) {
+            messageText.textContent = message;
+            messageBox.classList.remove('hidden');
+        }
+
+        messageCloseBtn.addEventListener('click', () => {
+            messageBox.classList.add('hidden');
+        });
+
+        function applyCardTheme(theme) {
+            card.style.background = theme.gradient;
+
+            if (theme.textColor === '#1a1a1a') {
+                card.classList.add('dark-text');
+                textColorPicker.value = '#1a1a1a';
+            } else {
+                card.classList.remove('dark-text');
+                textColorPicker.value = '#f0f0f0';
+            }
+
+            // Explicitly apply the color after setting the picker value
+            applyTextColor(textColorPicker.value);
+        }
+        
+        function applyTextColor(color) {
+            // Apply color to all elements, including user role
+            cardTitlePreview.style.color = color;
+            postContentPreview.style.color = color;
+            highlightedThoughtPreview.style.color = color;
+            userNamePreview.style.color = color;
+            userRolePreview.style.color = color;
+            cardHeaderPreview.style.color = color;
+            headerIcon.style.color = color;
+            userImagePreview.style.borderColor = color;
+        }
+
+        // Initialize gradients and event listeners
+        gradients.forEach((theme, index) => {
+            const div = document.createElement('div');
+            div.className = 'gradient-option';
+            div.style.background = theme.gradient;
+            div.addEventListener('click', () => {
+                selectGradient(div);
+                applyCardTheme(theme);
+                renderCard();
+            });
+            gradientSelector.appendChild(div);
+        });
+
+        // Set default gradient and content
+        const defaultGradientDiv = gradientSelector.querySelector('.gradient-option');
+        const defaultTheme = gradients[0];
+        if (defaultGradientDiv) {
+            selectGradient(defaultGradientDiv);
+            applyCardTheme(defaultTheme);
+        }
+
+        function renderCard() {
+            cardTitlePreview.textContent = cardTitleInput.value;
+            cardHeaderPreview.textContent = cardHeaderInput.value;
+            if (window.marked && typeof window.marked.parse === 'function') {
+                postContentPreview.innerHTML = window.marked.parse(postContentInput.value);
+                highlightedThoughtPreview.innerHTML = window.marked.parse(thoughtContentInput.value);
+            } else {
+                postContentPreview.textContent = postContentInput.value;
+                highlightedThoughtPreview.textContent = thoughtContentInput.value;
+            }
+            userNamePreview.textContent = userNameInput.value;
+            userRolePreview.textContent = userRoleInput.value;
+            userImagePreview.src = userImageInput.value;
+            linkedinLink.href = linkedinUrlInput.value;
+            
+            // Show/hide thought section
+            if (thoughtContentInput.value.trim() === '') {
+                highlightedThoughtPreview.style.display = 'none';
+            } else {
+                highlightedThoughtPreview.style.display = 'block';
+            }
+        }
+
+        function selectGradient(element) {
+            document.querySelectorAll('.gradient-option').forEach(el => {
+                el.classList.remove('selected');
+            });
+            element.classList.add('selected');
+        }
+
+        // Event listeners for inputs
+        cardTitleInput.addEventListener('input', renderCard);
+        cardHeaderInput.addEventListener('input', renderCard);
+        postContentInput.addEventListener('input', renderCard);
+        thoughtContentInput.addEventListener('input', renderCard);
+        userNameInput.addEventListener('input', renderCard);
+        userRoleInput.addEventListener('input', renderCard);
+        userImageInput.addEventListener('input', renderCard);
+        linkedinUrlInput.addEventListener('input', renderCard);
+        
+        // Dynamic card width
+        cardWidthInput.addEventListener('input', (e) => {
+            card.style.maxWidth = `${e.target.value}px`;
+        });
+        
+        // Manual Text Color Control
+        textColorPicker.addEventListener('input', (e) => {
+            applyTextColor(e.target.value);
+        });
+
+        // Initial render and card width setting
+        renderCard();
+        card.style.maxWidth = `${cardWidthInput.value}px`;
+        // Initial color application
+        applyTextColor(textColorPicker.value);
+
+
+        // Export functionality with fixes
+        exportButton.addEventListener('click', () => {
+            const cardToExport = document.getElementById('card');
+            
+            // To ensure rounded corners and correct element rendering, create a temporary container
+            const tempContainer = document.createElement('div');
+            tempContainer.style.position = 'absolute';
+            tempContainer.style.left = '-9999px';
+            tempContainer.style.top = '-9999px';
+            tempContainer.style.width = cardToExport.offsetWidth + 'px';
+            tempContainer.style.height = cardToExport.offsetHeight + 'px';
+            tempContainer.style.overflow = 'hidden';
+            
+            const cardClone = cardToExport.cloneNode(true);
+            tempContainer.appendChild(cardClone);
+            document.body.appendChild(tempContainer);
+
+            // Use the clone for rendering with html2canvas
+            html2canvas(cardClone, {
+                useCORS: true,
+                scale: 2, // Increase scale for better quality
+                allowTaint: true,
+            }).then(canvas => {
+                const link = document.createElement('a');
+                link.download = 'card-export.png';
+                link.href = canvas.toDataURL('image/png');
+                link.click();
+                
+                // Cleanup temporary elements
+                document.body.removeChild(tempContainer);
+            });
+        });
+
+        // Gemini API integration
+        async function callGemini(prompt, targetInput) {
+            loader.style.display = 'block';
+            const apiKey = "";
+            const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${apiKey}`;
+
+            const payload = {
+                contents: [{ parts: [{ text: prompt }] }],
+            };
+
+            try {
+                const response = await fetch(apiUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+
+                if (!response.ok) {
+                    throw new Error(`API call failed with status: ${response.status}`);
+                }
+
+                const result = await response.json();
+                const text = result?.candidates?.[0]?.content?.parts?.[0]?.text;
+                if (text) {
+                    targetInput.value = text;
+                    renderCard();
+                } else {
+                    console.error('No text found in API response.');
+                    showMessage('Failed to get a response from the API. Please try again.');
+                }
+            } catch (error) {
+                console.error('Error calling Gemini API:', error);
+                showMessage('An error occurred. Check the console for details.');
+            } finally {
+                loader.style.display = 'none';
+            }
+        }
+
+        // Specific Gemini API call for title and header generation
+        async function generateTitleAndHeader(prompt) {
+            loader.style.display = 'block';
+            const apiKey = "";
+            const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${apiKey}`;
+
+            const payload = {
+                contents: [{ parts: [{ text: prompt }] }],
+            };
+
+            try {
+                const response = await fetch(apiUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+
+                if (!response.ok) {
+                    throw new Error(`API call failed with status: ${response.status}`);
+                }
+
+                const result = await response.json();
+                const text = result?.candidates?.[0]?.content?.parts?.[0]?.text;
+                if (text) {
+                    const [title, header] = text.split('|').map(s => s.trim());
+                    if (title) {
+                        cardTitleInput.value = title;
+                    }
+                    if (header) {
+                        cardHeaderInput.value = header;
+                    }
+                    renderCard();
+                } else {
+                    console.error('No text found in API response for title/header.');
+                    showMessage('Failed to generate title and header. Please try again.');
+                }
+            } catch (error) {
+                console.error('Error calling Gemini API for title/header:', error);
+                showMessage('An error occurred. Check the console for details.');
+            } finally {
+                loader.style.display = 'none';
+            }
+        }
+
+        improveEmojisBtn.addEventListener('click', () => {
+            const currentContent = postContentInput.value;
+            const prompt = `Add some relevant emojis to the following text to make it more engaging. Keep the original text and only add emojis. Text: "${currentContent}"`;
+            callGemini(prompt, postContentInput);
+        });
+
+        improveProfessionalBtn.addEventListener('click', () => {
+            const currentContent = postContentInput.value;
+            const prompt = `Enhance the following text by adding relevant emojis and markdown formatting (like bolding key phrases or using bullet points for lists) to improve its readability and make it more engaging. Do not rewrite the entire text, just improve its presentation. Text: "${currentContent}"`;
+            callGemini(prompt, postContentInput);
+        });
+
+        generateThoughtBtn.addEventListener('click', () => {
+            const currentContent = postContentInput.value;
+            const prompt = `Based on the following text, generate a short, insightful, and concise "thought" that stands out. It should be a maximum of three lines and include relevant emojis. Text: "${currentContent}"`;
+            callGemini(prompt, thoughtContentInput);
+        });
+
+        generateAllBtn.addEventListener('click', () => {
+            const postContent = postContentInput.value;
+            if (!postContent.trim()) {
+                showMessage("Please enter some post content before auto-generating a title and header.");
+                return;
+            }
+            const prompt = `Based on the following post content, generate a short, catchy title and a very concise header. Format the response as "Title | Header". Post Content: "${postContent}"`;
+            generateTitleAndHeader(prompt);
+        });
+    });
 </script>
-
 </body>
 </html>
