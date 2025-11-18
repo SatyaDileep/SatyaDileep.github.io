@@ -1,4 +1,5 @@
-source 'https://rubygems.org'
-gem 'jekyll'
-gem 'github-pages'
-gem "jekyll-glass"
+source "https://rubygems.org"
+
+gem "jekyll", "~> 4.3"
+gem "jekyll-theme-cayman"
+gem "github-pages"
