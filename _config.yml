@@ -1,5 +1,10 @@
 title: "AI Product Manager Portfolio"
 description: "Showcasing my AI‑product ideas, micro‑apps and thoughts."
-theme: jekyll-glass
-markdown: kymdown
+theme: jekyll-theme-cayman
+# Correct Markdown processor (Jekyll’s default).
+markdown: kramdown
 permalink: /:year/:month/:day/:title/
+# Values used in _layouts/default.html
+github:
+  username: SatyaDileep
+linkedin: https://www.linkedin.com/in/satya-dileep-kumar-thotakura-9b25021b/
