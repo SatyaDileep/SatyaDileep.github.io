@@ -12,5 +12,6 @@ permalink: /micro-apps/
     <h3>LinkedIn Card Creator</h3>
     <p>Build a visual card, export the markdown, and paste straight into LinkedIn.</p>
     <p><a href="{{ '/apps/linkedin-card.html' | relative_url }}" target="_blank">Open App</a></p>
+    <p><a href="{{ 'https://gemini.google.com/share/339c156794f9' }}" target="_blank">Open Demo</a></p>
   </div>
 </section>
