@@ -1,3 +1,8 @@
+---
+layout: default
+title: Ideas
+permalink: /ideas/
+---
 <section id="ideas" class="grid">
   <h2 class="section-title">Ideas & Thoughts</h2>
 
