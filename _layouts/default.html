@@ -6,22 +6,53 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
 </head>
-<body class="{{ page.theme | default: site.theme }}">
+<body class="{{ page.theme | default: '' }}">
 
-<header>
-  <nav>
-    <a href="{{ '/' | relative_url }}">About</a>
-    <a href="{{ '/ideas' | relative_url }}">Ideas</a>
-    <a href="{{ '/micro-apps' | relative_url }}">Micro‑Apps</a>
-    <a href="{{ '/blog' | relative_url }}">Blog</a>
+<header class="site-header glass">
+  <a class="brand" href="{{ '/' | relative_url }}">AI PM</a>
+  <nav class="site-nav" aria-label="Primary">
+    <a href="{{ '/' | relative_url }}" class="{% if page.url == '/' %}active{% endif %}">About</a>
+    <a href="{{ '/ideas' | relative_url }}" class="{% if page.url contains '/ideas' %}active{% endif %}">Ideas</a>
+    <a href="{{ '/micro-apps' | relative_url }}" class="{% if page.url contains '/micro-apps' %}active{% endif %}">Micro‑Apps</a>
+    <a href="{{ '/blog' | relative_url }}" class="{% if page.url contains '/blog' %}active{% endif %}">Blog</a>
   </nav>
+  <div class="actions">
+    <button id="theme-toggle" class="icon-btn" aria-label="Toggle theme" title="Toggle theme">☾</button>
+    <a class="cta" href="{{ '/micro-apps' | relative_url }}">Launch apps</a>
+  </div>
 </header>
 
-{{ content }}
+<main class="container">
+  {{ content }}
+</main>
 
-<footer>
-  © {{ site.time | date: "%Y" }} {{ site.title }} • <a href="https://github.com/{{ site.github.username }}">GitHub</a> • <a href="https://linkedin.com/in/{{ site.linkedin }}">LinkedIn</a>
+<footer class="site-footer glass">
+  © {{ site.time | date: "%Y" }} {{ site.title }} •
+  <a href="https://github.com/{{ site.github.username }}">GitHub</a> •
+  <a href="https://linkedin.com/in/{{ site.linkedin }}">LinkedIn</a>
 </footer>
+
+<script>
+  (function () {
+    const order = ["", "dark", "electrify"];
+    const saved = localStorage.getItem("theme") || "";
+    const fm = "{{ page.theme | default: '' }}";
+    const initial = saved || fm || "";
+    if (initial) document.body.classList.add(initial);
+    const btn = document.getElementById("theme-toggle");
+    if (btn) {
+      btn.addEventListener("click", () => {
+        document.body.classList.remove("dark","electrify");
+        const current = order.find(v => v && document.body.classList.contains(v)) || "";
+        const next = order[(order.indexOf(current) + 1) % order.length];
+        if (next) document.body.classList.add(next);
+        localStorage.setItem("theme", next || "");
+        btn.textContent = document.body.classList.contains("dark") ? "☼" : document.body.classList.contains("electrify") ? "⚡" : "☾";
+      });
+      btn.dispatchEvent(new Event("click")); btn.dispatchEvent(new Event("click"));
+    }
+  })();
+</script>
 
 </body>
 </html>
