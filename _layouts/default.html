@@ -12,12 +12,14 @@
   <a class="brand" href="{{ '/' | relative_url }}">AI PM</a>
   <nav class="site-nav" aria-label="Primary">
     <a href="{{ '/' | relative_url }}" class="{% if page.url == '/' %}active{% endif %}">Home</a>
+    <a href="{{ '/about' | relative_url }}" class="{% if page.url contains '/about' %}active{% endif %}">About</a>
+    <a href="{{ '/skills' | relative_url }}" class="{% if page.url contains '/skills' %}active{% endif %}">Skills</a>
     <a href="{{ '/micro-apps' | relative_url }}" class="{% if page.url contains '/micro-apps' %}active{% endif %}">Work</a>
     <a href="{{ '/blog' | relative_url }}" class="{% if page.url contains '/blog' %}active{% endif %}">Blog</a>
   </nav>
   <div class="actions">
     <button id="theme-toggle" class="icon-btn" aria-label="Toggle theme" title="Toggle theme">☾</button>
-    <a class="cta" href="{{ '/micro-apps' | relative_url }}">Launch apps</a>
+    <a class="cta" href="{{ '/contact' | relative_url }}">Contact</a>
   </div>
 </header>
 
@@ -26,9 +28,12 @@
 </main>
 
 <footer class="site-footer glass">
-  © {{ site.time | date: "%Y" }} {{ site.title }} •
-  <a href="https://github.com/{{ site.github.username }}">GitHub</a> •
-  <a href="https://linkedin.com/in/{{ site.linkedin }}">LinkedIn</a>
+  © {{ site.time | date: "%Y" }} Satya Dileep Kumar Thotakura
+  • <a href="{{ '/about' | relative_url }}">About</a>
+  • <a href="{{ '/skills' | relative_url }}">Skills</a>
+  • <a href="{{ '/contact' | relative_url }}">Contact</a>
+  • <a href="https://github.com/SatyaDileep">GitHub</a>
+  • <a href="https://www.linkedin.com/in/satya-dileepkumar-thotakura-9b25021b">LinkedIn</a>
 </footer>
 
 <script>

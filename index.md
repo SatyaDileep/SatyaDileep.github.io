@@ -31,34 +31,32 @@ a.btn.secondary {
 .hero-avatar { flex: 0 0 100px; }
 .avatar { width: 100px; height: 100px; border-radius: 50%; object-fit: cover; }
 
-.section-title { font-size: 1.1rem; margin: 2rem 0 1rem 0; color: var(--text); }
-.project-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem; }
-.project-card { 
-  padding: 1.25rem; border-radius: 12px; border: 1px solid var(--border);
-  background: var(--surface); 
+.section-title { font-size: 1.1rem; margin: 2rem 0 1rem 0; }
+.quick-links { display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 1.5rem; }
+.quick-link-card {
+  flex: 1;
+  min-width: 140px;
+  padding: 1rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  text-decoration: none;
+  text-align: center;
 }
-.project-card h3 { margin: 0 0 0.5rem 0; font-size: 1rem; }
-.project-card p { margin: 0; font-size: 0.9rem; color: var(--muted); }
-
-.stack-list { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1rem; }
-.stack-tag {
-  background: var(--border);
-  color: var(--text);
-  padding: 4px 10px;
-  border-radius: 6px;
-  font-size: 0.8rem;
-}
+.quick-link-card:hover { border-color: var(--primary); }
+.quick-link-card h3 { margin: 0 0 0.25rem 0; font-size: 0.95rem; color: var(--text); }
+.quick-link-card p { margin: 0; font-size: 0.8rem; color: var(--muted); }
 </style>
 
 <section class="hero">
   <div class="hero-flex">
     <div class="hero-text">
       <h1>Hi, I'm <span class="primary">Satya Dileep Kumar Thotakura</span></h1>
-      <p class="subtitle">AI Product Manager — GenAI & agentic automation</p>
-      <p>I build practical micro-apps and prototypes that ship. 13+ years in industry, 2+ years in PM focused on GenAI and applied automation.</p>
+      <p class="subtitle">AI Product Manager at Pegasystems</p>
+      <p>I blend Generative AI with LowCode to transform user experiences. 8+ years in enterprise software, 2+ years shipping PM-led AI initiatives.</p>
       <div>
-        <a href="{{ '/micro-apps' | relative_url }}" class="btn">View My Work</a>
-        <a href="{{ '/blog' | relative_url }}" class="btn secondary">Read Blog</a>
+        <a href="{{ '/about' | relative_url }}" class="btn">About Me</a>
+        <a href="{{ '/contact' | relative_url }}" class="btn secondary">Get in Touch</a>
       </div>
     </div>
     <div class="hero-avatar">
@@ -68,30 +66,23 @@ a.btn.secondary {
 </section>
 
 <section>
-  <h2 class="section-title">What I'm Building</h2>
-  <div class="project-grid">
-    <div class="project-card">
-      <h3>PM Canvas Agent</h3>
-      <p>Transforms idea mind-dumps into canvases and lightweight mocks</p>
-    </div>
-    <div class="project-card">
-      <h3>VC Scout</h3>
-      <p>Vector matching, citations, and outreach tooling for investors</p>
-    </div>
-    <div class="project-card">
-      <h3>Micro-Apps</h3>
-      <p>Browser-first productivity tools with zero setup</p>
-    </div>
-  </div>
-
-  <h2 class="section-title">Stack</h2>
-  <div class="stack-list">
-    <span class="stack-tag">Google Cloud</span>
-    <span class="stack-tag">Serverless</span>
-    <span class="stack-tag">Pega</span>
-    <span class="stack-tag">Python</span>
-    <span class="stack-tag">JavaScript</span>
-    <span class="stack-tag">GenAI</span>
-    <span class="stack-tag">Agentic AI</span>
+  <h2 class="section-title">Explore</h2>
+  <div class="quick-links">
+    <a href="{{ '/about' | relative_url }}" class="quick-link-card">
+      <h3>Experience</h3>
+      <p>My journey</p>
+    </a>
+    <a href="{{ '/skills' | relative_url }}" class="quick-link-card">
+      <h3>Skills</h3>
+      <p>Certifications & expertise</p>
+    </a>
+    <a href="{{ '/micro-apps' | relative_url }}" class="quick-link-card">
+      <h3>Work</h3>
+      <p>Micro-apps & tools</p>
+    </a>
+    <a href="{{ '/blog' | relative_url }}" class="quick-link-card">
+      <h3>Blog</h3>
+      <p>Thoughts & case studies</p>
+    </a>
   </div>
 </section>
