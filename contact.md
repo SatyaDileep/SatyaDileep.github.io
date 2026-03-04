@@ -69,12 +69,6 @@ title: Contact
     </div>
 
     <div class="contact-card">
-      <div class="contact-icon">📱</div>
-      <h3>Phone</h3>
-      <p><a href="tel:+919032015506">+91 9032015506</a></p>
-    </div>
-
-    <div class="contact-card">
       <div class="contact-icon">💼</div>
       <h3>LinkedIn</h3>
       <p><a href="https://www.linkedin.com/in/satya-dileepkumar-thotakura-9b25021b" target="_blank">linkedin.com/in/satya-dileep...</a></p>
