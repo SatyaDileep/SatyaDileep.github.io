@@ -11,9 +11,8 @@
 <header class="site-header glass">
   <a class="brand" href="{{ '/' | relative_url }}">AI PM</a>
   <nav class="site-nav" aria-label="Primary">
-    <a href="{{ '/' | relative_url }}" class="{% if page.url == '/' %}active{% endif %}">About</a>
-    <a href="{{ '/ideas' | relative_url }}" class="{% if page.url contains '/ideas' %}active{% endif %}">Ideas</a>
-    <a href="{{ '/micro-apps' | relative_url }}" class="{% if page.url contains '/micro-apps' %}active{% endif %}">Micro‑Apps</a>
+    <a href="{{ '/' | relative_url }}" class="{% if page.url == '/' %}active{% endif %}">Home</a>
+    <a href="{{ '/micro-apps' | relative_url }}" class="{% if page.url contains '/micro-apps' %}active{% endif %}">Work</a>
     <a href="{{ '/blog' | relative_url }}" class="{% if page.url contains '/blog' %}active{% endif %}">Blog</a>
   </nav>
   <div class="actions">
