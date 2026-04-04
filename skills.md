@@ -107,4 +107,27 @@ title: Skills
     <h3>Agentic AI and AI Agents: A Primer for Leaders</h3>
     <p>Professional Certification</p>
   </div>
+  <div class="cert-card">
+    <span class="cert-badge">Security</span>
+    <h3>Web Security: OAuth and OpenID Connect (2018)</h3>
+    <p>LinkedIn</p>
+  </div>
+
+  <div class="cert-card">
+    <span class="cert-badge">Java</span>
+    <h3>First Look: Java 10 and Java 11</h3>
+    <p>LinkedIn</p>
+  </div>
+
+  <div class="cert-card">
+    <span class="cert-badge">Skills</span>
+    <h3>Improving Your Listening Skills</h3>
+    <p>LinkedIn</p>
+  </div>
+
+  <div class="cert-card">
+    <span class="cert-badge">Oracle</span>
+    <h3>Oracle Certified Professional, Java SE 6 Programmer</h3>
+    <p>Oracle</p>
+  </div>
 </section>

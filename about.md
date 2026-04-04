@@ -97,7 +97,7 @@ title: About
       <h3 class="timeline-title">Development Engineer</h3>
       <div class="timeline-company">Pramati Technologies / WaveMaker</div>
       <div class="timeline-location">Hyderabad</div>
-      <p class="timeline-desc">Gathered requirements for Hybrid applications to be built on WaveMaker (A RAD tool), design, develop quality applications by powering them with Java logic for better computations.</p>
+      <p class="timeline-desc">Gathered requirements for Hybrid applications to be built on WaveMaker (A RAD tool), design, develop quality applications by powering them with Java logic for better computations. Developed and enhanced internal applications like Leave Management System.</p>
     </div>
 
     <div class="timeline-item">
