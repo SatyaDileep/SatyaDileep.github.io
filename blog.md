@@ -65,23 +65,11 @@ title: Blog
   .blog-grid { grid-template-columns: 1fr; }
   .blog-card { padding: 1rem; }
 }
-  margin-top: 1rem;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-}
-.blog-card .tag {
-  font-size: 0.7rem;
-  background: var(--border);
-  color: var(--muted);
-  padding: 2px 8px;
-  border-radius: 4px;
-}
 </style>
 
 <div class="blog-header">
-  <h1>Blog</h1>
-  <p>Thoughts on product management, GenAI, agentic automation, and prototyping.</p>
+  <h1>Insights & Reflections</h1>
+  <p>Structured thoughts on Agentic AI, product strategy, and the shift from execution to orchestration.</p>
 </div>
 
 <div class="blog-grid">

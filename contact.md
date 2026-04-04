@@ -83,8 +83,8 @@ title: Contact
   </div>
 
   <div class="cta-box">
-    <h2>Let's Work Together</h2>
-    <p>Whether you have a project in mind, want to collaborate, or just want to say hi — drop me a message!</p>
+    <h2>Let's Build & Innovate</h2>
+    <p>Whether you have a project in mind, want to collaborate on an Agentic AI workflow, or just want to say hi — drop me a message!</p>
     <a href="mailto:satyadileepkmr30@gmail.com" class="btn">Send Message</a>
   </div>
 </section>
