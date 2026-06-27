@@ -69,7 +69,7 @@ a.btn.secondary {
       </div>
     </div>
     <div class="hero-avatar">
-      <img src="{{ '/assets/dileep11.jpg' | relative_url }}" alt="Satya Dileep" class="avatar" loading="lazy">
+      <img src="{{ '/assets/mypic.jfif' | relative_url }}" alt="Satya Dileep" class="avatar" loading="lazy">
     </div>
   </div>
 </section>
