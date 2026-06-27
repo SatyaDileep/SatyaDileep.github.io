@@ -1,3 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{{ page.title | default: site.title }}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+</head>
+<body>
+
+<main class="container" id="page-content">
+  {{ content }}
+</main>
+
+<nav class="bottom-nav" aria-label="Primary">
+  <div class="nav-slider" id="nav-slider"></div>
+  {% assign url = page.url %}
+  <a href="{{ '/' | relative_url }}" class="nav-item {% if url == '/' %}active{% endif %}" data-index="0">
+    <span class="nav-icon">&#8962;</span>
+    <span class="nav-label">Home</span>
+  </a>
+  <a href="{{ '/about' | relative_url }}" class="nav-item {% if url contains '/about' %}active{% endif %}" data-index="1">
+    <span class="nav-icon">&#128100;</span>
+    <span class="nav-label">About</span>
+  </a>
+  <a href="{{ '/skills' | relative_url }}" class="nav-item {% if url contains '/skills' %}active{% endif %}" data-index="2">
+    <span class="nav-icon">&#9889;</span>
+    <span class="nav-label">Skills</span>
+  </a>
+  <a href="{{ '/micro-apps' | relative_url }}" class="nav-item {% if url contains '/micro-apps' %}active{% endif %}" data-index="3">
+    <span class="nav-icon">&#128736;</span>
+    <span class="nav-label">Work</span>
+  </a>
+  {% assign is_blog = false %}
+  {% if url contains '/blog' or url contains '/20' %}{% assign is_blog = true %}{% endif %}
+  <a href="{{ '/blog' | relative_url }}" class="nav-item {% if is_blog %}active{% endif %}" data-index="4">
+    <span class="nav-icon">&#9997;</span>
+    <span class="nav-label">Blog</span>
+  </a>
+</nav>
+
+<button id="theme-toggle" class="theme-float" aria-label="Toggle theme" title="Toggle theme">☼</button>
+
+<footer class="site-footer">
+  &copy; {{ site.time | date: "%Y" }} Satya Dileep Kumar Thotakura
+</footer>
+
 <script>
   (function () {
     const toggle = document.getElementById("theme-toggle");
@@ -7,8 +54,10 @@
 
     function applyTheme(theme) {
       const t = valid.includes(theme) ? theme : "amber";
-      document.body.classList.remove("dark-amber", "dark-purple");
-      document.body.classList.add(classMap[t]);
+      if (document.body) {
+        document.body.classList.remove("dark-amber", "dark-purple");
+        document.body.classList.add(classMap[t]);
+      }
       if (toggle) toggle.textContent = labels[t];
       localStorage.setItem("theme", t);
     }
@@ -62,3 +111,6 @@
     setSlider();
   })();
 </script>
+
+</body>
+</html>
