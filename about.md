@@ -89,7 +89,8 @@ title: About
       <h3 class="timeline-title">Principal Software Engineer</h3>
       <div class="timeline-company">Pegasystems</div>
       <div class="timeline-location">Hyderabad, Telangana</div>
-      <div><span class="tech-tag">Enterprise Software</span><span class="tech-tag">Pega Platform</span></div>
+      <p class="timeline-desc">Architected and delivered enterprise-scale features on Pega's Low-Code platform. Drove technical design for workflow automation and integration capabilities serving global clients.</p>
+      <div><span class="tech-tag">Enterprise Software</span><span class="tech-tag">Pega Platform</span><span class="tech-tag">System Architecture</span></div>
     </div>
 
     <div class="timeline-item">
@@ -97,7 +98,8 @@ title: About
       <h3 class="timeline-title">Senior Software Engineer</h3>
       <div class="timeline-company">Pegasystems</div>
       <div class="timeline-location">Hyderabad, Telangana</div>
-      <div><span class="tech-tag">Enterprise Software</span><span class="tech-tag">Workflow Automation</span></div>
+      <p class="timeline-desc">Built and maintained core platform modules for enterprise workflow automation. Collaborated across teams to ship high-impact features improving developer productivity and runtime performance.</p>
+      <div><span class="tech-tag">Enterprise Software</span><span class="tech-tag">Workflow Automation</span><span class="tech-tag">Platform Engineering</span></div>
     </div>
 
     <div class="timeline-item">
@@ -105,8 +107,8 @@ title: About
       <h3 class="timeline-title">Senior Development Engineer</h3>
       <div class="timeline-company">Pramati Technologies / Imaginea Technologies</div>
       <div class="timeline-location">Hyderabad Area</div>
-      <p class="timeline-desc">Design, develop and deliver best possible solutions for clients.</p>
-      <div><span class="tech-tag">Software Development</span></div>
+      <p class="timeline-desc">Designed and delivered client solutions across cloud and enterprise stacks. Owned end-to-end delivery for multiple concurrent projects, from requirements to deployment.</p>
+      <div><span class="tech-tag">Software Development</span><span class="tech-tag">Cloud Solutions</span></div>
     </div>
 
     <div class="timeline-item">

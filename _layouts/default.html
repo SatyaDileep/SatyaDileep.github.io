@@ -9,17 +9,10 @@
 <body class="{{ page.theme | default: '' }}">
 
 <header class="site-header glass">
-  <a class="brand" href="{{ '/' | relative_url }}">AI PM</a>
-  <nav class="site-nav" aria-label="Primary">
-    <a href="{{ '/' | relative_url }}" class="{% if page.url == '/' %}active{% endif %}">Home</a>
-    <a href="{{ '/about' | relative_url }}" class="{% if page.url contains '/about' %}active{% endif %}">About</a>
-    <a href="{{ '/skills' | relative_url }}" class="{% if page.url contains '/skills' %}active{% endif %}">Skills</a>
-    <a href="{{ '/micro-apps' | relative_url }}" class="{% if page.url contains '/micro-apps' %}active{% endif %}">Work</a>
-    <a href="{{ '/blog' | relative_url }}" class="{% if page.url contains '/blog' %}active{% endif %}">Blog</a>
-  </nav>
+  <a class="brand" href="{{ '/' | relative_url }}">AI PM</a>
   <div class="actions">
-    <button id="theme-toggle" class="icon-btn" aria-label="Toggle theme" title="Toggle theme">☾</button>
     <a class="cta" href="{{ '/contact' | relative_url }}">Contact</a>
+    <button id="theme-toggle" class="icon-btn" aria-label="Toggle theme" title="Toggle theme">☾</button>
   </div>
 </header>
 
@@ -27,13 +20,32 @@
   {{ content }}
 </main>
 
-<footer class="site-footer glass">
-  © {{ site.time | date: "%Y" }} Satya Dileep Kumar Thotakura
-  • <a href="{{ '/about' | relative_url }}">About</a>
-  • <a href="{{ '/skills' | relative_url }}">Skills</a>
-  • <a href="{{ '/contact' | relative_url }}">Contact</a>
-  • <a href="https://github.com/SatyaDileep">GitHub</a>
-  • <a href="https://www.linkedin.com/in/satya-dileepkumar-thotakura-9b25021b">LinkedIn</a>
+<nav class="bottom-nav" aria-label="Primary">
+  <div class="nav-slider" id="nav-slider"></div>
+  <a href="{{ '/' | relative_url }}" class="nav-item {% if page.url == '/' %}active{% endif %}" data-index="0">
+    <span class="nav-icon">&#8962;</span>
+    <span class="nav-label">Home</span>
+  </a>
+  <a href="{{ '/about' | relative_url }}" class="nav-item {% if page.url contains '/about' %}active{% endif %}" data-index="1">
+    <span class="nav-icon">&#128100;</span>
+    <span class="nav-label">About</span>
+  </a>
+  <a href="{{ '/skills' | relative_url }}" class="nav-item {% if page.url contains '/skills' %}active{% endif %}" data-index="2">
+    <span class="nav-icon">&#9889;</span>
+    <span class="nav-label">Skills</span>
+  </a>
+  <a href="{{ '/micro-apps' | relative_url }}" class="nav-item {% if page.url contains '/micro-apps' %}active{% endif %}" data-index="3">
+    <span class="nav-icon">&#128736;</span>
+    <span class="nav-label">Work</span>
+  </a>
+  <a href="{{ '/blog' | relative_url }}" class="nav-item {% if page.url contains '/blog' %}active{% endif %}" data-index="4">
+    <span class="nav-icon">&#9997;</span>
+    <span class="nav-label">Blog</span>
+  </a>
+</nav>
+
+<footer class="site-footer">
+  &copy; {{ site.time | date: "%Y" }} Satya Dileep Kumar Thotakura
 </footer>
 
 <script>
@@ -59,6 +71,17 @@
     if (m < 0 || (m === 0 && now.getDate() < start.getDate())) years--;
     const el = document.getElementById("exp-years");
     if (el) el.textContent = years;
+
+    const slider = document.getElementById("nav-slider");
+    const active = document.querySelector(".nav-item.active");
+    if (slider && active) {
+      const idx = parseInt(active.dataset.index);
+      const items = document.querySelectorAll(".nav-item");
+      const total = items.length;
+      const pct = 100 / total;
+      slider.style.left = (idx * pct) + "%";
+      slider.style.width = pct + "%";
+    }
   })();
 </script>
 
