@@ -4,58 +4,58 @@ title: Home
 ---
 
 <style>
-.hero-flex { display: flex; gap: 2rem; align-items: center; flex-wrap: wrap; justify-content: space-between; }
-.hero-text { flex: 1; min-width: 240px; }
-.hero h1 { font-size: clamp(1.6rem, 4vw, 2.2rem); letter-spacing: -0.5px; line-height: 1.2; margin: 0 0 0.5rem; }
-.hero .primary { color: var(--primary); font-weight: 800; }
-.hero .subtitle { font-size: 1rem; color: var(--muted); margin-bottom: 0.75rem; font-weight: 500; }
-.hero p { color: var(--muted); margin: 0 0 1rem; font-size: 0.95rem; line-height: 1.6; }
-.hero-avatar { flex: 0 0 130px; position: relative; }
+.hero {
+  text-align: center;
+  padding: 2rem 0 1rem;
+}
+.hero-avatar {
+  width: 120px; height: 120px; margin: 0 auto 1.5rem;
+  position: relative;
+}
 .hero-avatar::before {
-  content: ''; position: absolute; inset: -8px; border-radius: 50%;
+  content: ''; position: absolute; inset: -10px; border-radius: 50%;
   background: radial-gradient(circle, var(--primary-dim) 0%, transparent 70%);
-  animation: pulseGlow 3s ease-in-out infinite;
+  animation: pulseGlow 4s ease-in-out infinite;
 }
-@keyframes pulseGlow { 0%, 100% { transform: scale(1); opacity: 0.6; } 50% { transform: scale(1.08); opacity: 1; } }
-.avatar { width: 130px; height: 130px; border-radius: 50%; object-fit: cover; position: relative; z-index: 1; border: 2px solid var(--border); }
-.status-dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: #22c55e; margin-right: 6px; vertical-align: middle; }
-.status-text { display: inline-flex; align-items: center; gap: 6px; font-size: 0.8rem; color: var(--muted); margin-bottom: 1rem; }
-.quick-links { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.75rem; margin-top: 0.5rem; }
+@keyframes pulseGlow { 0%, 50%, 100% { transform: scale(1); opacity: 0.5; } 70% { transform: scale(1.1); opacity: 1; } }
+.avatar { width: 120px; height: 120px; border-radius: 50%; object-fit: cover; position: relative; z-index: 1; border: 2px solid var(--border); }
+.hero h1 { font-size: clamp(1.5rem, 3.5vw, 2rem); letter-spacing: -0.5px; line-height: 1.25; margin: 0 0 0.35rem; }
+.hero .name { color: var(--primary); font-weight: 800; }
+.hero .subtitle { font-size: 1rem; color: var(--muted); margin: 0 0 0.75rem; font-weight: 500; }
+.hero .tagline { color: var(--muted); margin: 0 auto 1.25rem; font-size: 0.92rem; line-height: 1.6; max-width: 520px; }
+.hero-btns { display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap; }
+
+.quick-links { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.75rem; }
 .quick-link-card {
-  display: flex; align-items: center; gap: 0.75rem; padding: 0.85rem 1rem;
-  background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-sm);
-  text-decoration: none; transition: var(--transition);
+  display: flex; flex-direction: column; align-items: center; gap: 0.4rem;
+  padding: 1.25rem 0.75rem;
+  background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
+  text-decoration: none; text-align: center; transition: var(--transition);
 }
-.quick-link-card:hover { border-color: var(--primary); transform: translateY(-2px); box-shadow: var(--shadow); }
-.quick-link-card .qli { font-size: 1.2rem; flex-shrink: 0; }
-.quick-link-card .qlb { display: flex; flex-direction: column; }
+.quick-link-card:hover { border-color: var(--primary); transform: translateY(-3px); box-shadow: var(--shadow-lg); }
+.quick-link-card .qli { font-size: 1.6rem; line-height: 1; }
 .quick-link-card h3 { margin: 0; font-size: 0.85rem; color: var(--text); font-weight: 600; }
 .quick-link-card p { margin: 0; font-size: 0.7rem; color: var(--muted); }
+
 @media (max-width: 480px) {
-  .hero-flex { flex-direction: column; text-align: center; gap: 1.25rem; }
-  .hero-avatar { flex: 0 0 100px; }
+  .hero { padding: 1.5rem 0 0.5rem; }
+  .hero-avatar { width: 100px; height: 100px; margin-bottom: 1rem; }
   .avatar { width: 100px; height: 100px; }
-  .quick-links { grid-template-columns: 1fr 1fr; gap: 0.5rem; }
-  .quick-link-card { flex-direction: column; text-align: center; padding: 0.75rem; }
-  .quick-link-card .qlb { align-items: center; }
+  .quick-links { gap: 0.5rem; }
+  .quick-link-card { padding: 1rem 0.5rem; }
 }
 </style>
 
 <section class="hero">
-  <div class="hero-flex">
-    <div class="hero-text">
-      <div class="status-text"><span class="status-dot"></span> Currently at Pegasystems</div>
-      <h1>Hi, I'm <span class="primary">Satya Dileep Kumar Thotakura</span></h1>
-      <p class="subtitle">AI Product Manager</p>
-      <p>I blend Generative AI with LowCode to transform user experiences. <strong><span id="exp-years"></span> years</strong> total in enterprise software, with the last 2+ years focused on product management.</p>
-      <div style="margin-top:1.25rem">
-        <a href="{{ '/about' | relative_url }}" class="btn">About Me</a>
-        <a href="{{ '/contact' | relative_url }}" class="btn secondary">Get in Touch</a>
-      </div>
-    </div>
-    <div class="hero-avatar">
-      <img src="{{ '/assets/mypic.jfif' | relative_url }}" alt="Satya Dileep" class="avatar" loading="lazy">
-    </div>
+  <div class="hero-avatar">
+    <img src="{{ '/assets/mypic.jfif' | relative_url }}" alt="Satya Dileep" class="avatar" loading="lazy">
+  </div>
+  <h1><span class="name">Satya Dileep Kumar Thotakura</span></h1>
+  <p class="subtitle">AI Product Manager at Pegasystems</p>
+  <p class="tagline">Blending Generative AI with LowCode to transform user experiences. <strong><span id="exp-years"></span> years</strong> in enterprise software, with the last 2+ years focused on product management.</p>
+  <div class="hero-btns">
+    <a href="{{ '/about' | relative_url }}" class="btn">About Me</a>
+    <a href="{{ '/contact' | relative_url }}" class="btn secondary">Get in Touch</a>
   </div>
 </section>
 
@@ -64,31 +64,23 @@ title: Home
   <div class="quick-links">
     <a href="{{ '/about' | relative_url }}" class="quick-link-card">
       <span class="qli">&#128218;</span>
-      <div class="qlb">
-        <h3>Experience</h3>
-        <p>13+ year journey</p>
-      </div>
+      <h3>Experience</h3>
+      <p>13+ year journey</p>
     </a>
     <a href="{{ '/skills' | relative_url }}" class="quick-link-card">
       <span class="qli">&#128640;</span>
-      <div class="qlb">
-        <h3>Skills</h3>
-        <p>Certifications & tools</p>
-      </div>
+      <h3>Skills</h3>
+      <p>Certifications & tools</p>
     </a>
-    <a href="{{ '/micro-apps' | relative_url }}" class="quick-link-card">
+    <a href="{{ '/micro-apps/' | relative_url }}" class="quick-link-card">
       <span class="qli">&#128736;</span>
-      <div class="qlb">
-        <h3>Work</h3>
-        <p>Micro-apps & prototypes</p>
-      </div>
+      <h3>Work</h3>
+      <p>Micro-apps & prototypes</p>
     </a>
     <a href="{{ '/blog' | relative_url }}" class="quick-link-card">
       <span class="qli">&#9997;</span>
-      <div class="qlb">
-        <h3>Blog</h3>
-        <p>Thoughts on AI & PM</p>
-      </div>
+      <h3>Blog</h3>
+      <p>Thoughts on AI & PM</p>
     </a>
   </div>
 </section>
