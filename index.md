@@ -6,7 +6,7 @@ title: Home
 <style>
 .hero-wrap {
   display: flex; gap: 2.5rem; align-items: center;
-  padding: 0.5rem 0;
+  padding: 0.5rem 0 0.25rem;
 }
 .hero-avatar {
   flex: 0 0 160px; position: relative;
@@ -38,7 +38,7 @@ title: Home
 .card-link .ico { font-size: 1.5rem; line-height: 1; }
 .card-link h3 { margin: 0; font-size: 0.85rem; color: var(--text); font-weight: 600; }
 .card-link p { margin: 0; font-size: 0.7rem; color: var(--muted); }
-.hero-wrap + section .section-title { margin-top: 1.5rem; }
+.hero-wrap + section .section-title { margin-top: 0.75rem; }
 
 @media (max-width: 640px) {
   .hero-wrap { flex-direction: column; text-align: center; gap: 1.5rem; min-height: 0; }
