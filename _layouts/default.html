@@ -14,23 +14,26 @@
 
 <nav class="bottom-nav" aria-label="Primary">
   <div class="nav-slider" id="nav-slider"></div>
-  <a href="{{ '/' | relative_url }}" class="nav-item {% if page.url == '/' %}active{% endif %}" data-index="0">
+  {% assign url = page.url %}
+  <a href="{{ '/' | relative_url }}" class="nav-item {% if url == '/' %}active{% endif %}" data-index="0">
     <span class="nav-icon">&#8962;</span>
     <span class="nav-label">Home</span>
   </a>
-  <a href="{{ '/about' | relative_url }}" class="nav-item {% if page.url contains '/about' %}active{% endif %}" data-index="1">
+  <a href="{{ '/about' | relative_url }}" class="nav-item {% if url contains '/about' %}active{% endif %}" data-index="1">
     <span class="nav-icon">&#128100;</span>
     <span class="nav-label">About</span>
   </a>
-  <a href="{{ '/skills' | relative_url }}" class="nav-item {% if page.url contains '/skills' %}active{% endif %}" data-index="2">
+  <a href="{{ '/skills' | relative_url }}" class="nav-item {% if url contains '/skills' %}active{% endif %}" data-index="2">
     <span class="nav-icon">&#9889;</span>
     <span class="nav-label">Skills</span>
   </a>
-  <a href="{{ '/micro-apps' | relative_url }}" class="nav-item {% if page.url contains '/micro-apps' %}active{% endif %}" data-index="3">
+  <a href="{{ '/micro-apps' | relative_url }}" class="nav-item {% if url contains '/micro-apps' %}active{% endif %}" data-index="3">
     <span class="nav-icon">&#128736;</span>
     <span class="nav-label">Work</span>
   </a>
-  <a href="{{ '/blog' | relative_url }}" class="nav-item {% if page.url contains '/blog' %}active{% endif %}" data-index="4">
+  {% assign is_blog = false %}
+  {% if url contains '/blog' or url contains '/20' %}{% assign is_blog = true %}{% endif %}
+  <a href="{{ '/blog' | relative_url }}" class="nav-item {% if is_blog %}active{% endif %}" data-index="4">
     <span class="nav-icon">&#9997;</span>
     <span class="nav-label">Blog</span>
   </a>
@@ -66,16 +69,34 @@
     const el = document.getElementById("exp-years");
     if (el) el.textContent = years;
 
-    const slider = document.getElementById("nav-slider");
-    const active = document.querySelector(".nav-item.active");
-    if (slider && active) {
-      const idx = parseInt(active.dataset.index);
+    function setSlider() {
+      const slider = document.getElementById("nav-slider");
       const items = document.querySelectorAll(".nav-item");
       const total = items.length;
-      const pct = 100 / total;
-      slider.style.left = (idx * pct) + "%";
-      slider.style.width = pct + "%";
+      if (!slider || !total) return;
+      let active = document.querySelector(".nav-item.active");
+      if (!active) {
+        const path = location.pathname;
+        for (const item of items) {
+          const href = item.getAttribute("href");
+          if (href && path === href) { active = item; break; }
+          if (href && href !== "/" && path.startsWith(href)) { active = item; break; }
+        }
+        if (!active) {
+          const yearMatch = path.match(/^\/(20\d\d)/);
+          if (yearMatch) active = items[4];
+        }
+      }
+      if (active) {
+        const idx = parseInt(active.dataset.index);
+        const pct = 100 / total;
+        slider.style.left = (idx * pct) + "%";
+        slider.style.width = pct + "%";
+      } else {
+        slider.style.display = "none";
+      }
     }
+    setSlider();
   })();
 </script>
 
