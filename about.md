@@ -21,6 +21,10 @@ title: About
 .timeline-company { color: var(--primary); font-weight: 600; margin-bottom: 0.3rem; font-size: 0.9rem; }
 .timeline-desc { color: var(--muted); font-size: 0.9rem; margin: 0 0 0.5rem; line-height: 1.6; }
 .timeline-location { font-size: 0.8rem; color: var(--muted); margin-bottom: 0.4rem; }
+section:last-child .timeline:last-child { margin-bottom: 0; }
+section:last-child { margin-bottom: 0; }
+.page-header { margin-bottom: 1rem; }
+.section-title { margin-top: 1.5rem; }
 </style>
 
 <div class="page-header">
