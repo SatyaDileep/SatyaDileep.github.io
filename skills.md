@@ -40,57 +40,59 @@ title: Skills
 
   <h2 class="section-title">Certifications</h2>
 
-  <div class="cert-card">
-    <span class="cert-badge">Latest</span>
-    <h3>Introduction to Gemini Enterprise</h3>
-    <p>Google</p>
-  </div>
+  <div class="cert-grid">
+    <div class="cert-card">
+      <span class="cert-badge">Latest</span>
+      <h3>Introduction to Gemini Enterprise</h3>
+      <p>Google</p>
+    </div>
 
-  <div class="cert-card">
-    <span class="cert-badge">Pega</span>
-    <h3>Certified Senior System Architect (CSSA)</h3>
-    <p>Pegasystems</p>
-  </div>
+    <div class="cert-card">
+      <span class="cert-badge">Pega</span>
+      <h3>Certified Senior System Architect (CSSA)</h3>
+      <p>Pegasystems</p>
+    </div>
 
-  <div class="cert-card">
-    <span class="cert-badge">AI</span>
-    <h3>OpenAI GPTs: Creating Your Own Custom AI Assistants</h3>
-    <p>OpenAI</p>
-  </div>
+    <div class="cert-card">
+      <span class="cert-badge">AI</span>
+      <h3>OpenAI GPTs: Creating Your Own Custom AI Assistants</h3>
+      <p>OpenAI</p>
+    </div>
 
-  <div class="cert-card">
-    <span class="cert-badge">Pega</span>
-    <h3>Certified System Architect 7.2</h3>
-    <p>Pegasystems</p>
-  </div>
+    <div class="cert-card">
+      <span class="cert-badge">Pega</span>
+      <h3>Certified System Architect 7.2</h3>
+      <p>Pegasystems</p>
+    </div>
 
-  <div class="cert-card">
-    <span class="cert-badge">Leadership</span>
-    <h3>Agentic AI and AI Agents: A Primer for Leaders</h3>
-    <p>Professional Certification</p>
-  </div>
+    <div class="cert-card">
+      <span class="cert-badge">Leadership</span>
+      <h3>Agentic AI and AI Agents: A Primer for Leaders</h3>
+      <p>Professional Certification</p>
+    </div>
 
-  <div class="cert-card">
-    <span class="cert-badge">Security</span>
-    <h3>Web Security: OAuth and OpenID Connect (2018)</h3>
-    <p>LinkedIn</p>
-  </div>
+    <div class="cert-card">
+      <span class="cert-badge">Security</span>
+      <h3>Web Security: OAuth and OpenID Connect (2018)</h3>
+      <p>LinkedIn</p>
+    </div>
 
-  <div class="cert-card">
-    <span class="cert-badge">Java</span>
-    <h3>First Look: Java 10 and Java 11</h3>
-    <p>LinkedIn</p>
-  </div>
+    <div class="cert-card">
+      <span class="cert-badge">Java</span>
+      <h3>First Look: Java 10 and Java 11</h3>
+      <p>LinkedIn</p>
+    </div>
 
-  <div class="cert-card">
-    <span class="cert-badge">Skills</span>
-    <h3>Improving Your Listening Skills</h3>
-    <p>LinkedIn</p>
-  </div>
+    <div class="cert-card">
+      <span class="cert-badge">Skills</span>
+      <h3>Improving Your Listening Skills</h3>
+      <p>LinkedIn</p>
+    </div>
 
-  <div class="cert-card">
-    <span class="cert-badge">Oracle</span>
-    <h3>Oracle Certified Professional, Java SE 6 Programmer</h3>
-    <p>Oracle</p>
+    <div class="cert-card">
+      <span class="cert-badge">Oracle</span>
+      <h3>Oracle Certified Professional, Java SE 6 Programmer</h3>
+      <p>Oracle</p>
+    </div>
   </div>
 </section>
