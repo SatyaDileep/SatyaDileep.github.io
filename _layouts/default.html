@@ -8,14 +8,6 @@
 </head>
 <body class="{{ page.theme | default: '' }}">
 
-<header class="site-header glass">
-  <a class="brand" href="{{ '/' | relative_url }}">AI PM</a>
-  <div class="actions">
-    <a class="cta" href="{{ '/contact' | relative_url }}">Contact</a>
-    <button id="theme-toggle" class="icon-btn" aria-label="Toggle theme" title="Toggle theme">☾</button>
-  </div>
-</header>
-
 <main class="container">
   {{ content }}
 </main>
@@ -43,6 +35,8 @@
     <span class="nav-label">Blog</span>
   </a>
 </nav>
+
+<button id="theme-toggle" class="theme-float" aria-label="Toggle theme" title="Toggle theme">☾</button>
 
 <footer class="site-footer">
   &copy; {{ site.time | date: "%Y" }} Satya Dileep Kumar Thotakura
