@@ -14,12 +14,13 @@ title: Blog
   <p>Structured thoughts on Agentic AI, product strategy, and the shift from execution to orchestration.</p>
 </div>
 
-<div id="loading-spinner" class="spinner"></div>
-
 <div class="blog-grid">
   {% assign sorted_posts = site.posts | sort: 'date' | reverse %}
   {% for post in sorted_posts %}
-    <article class="blog-card" data-url="{{ post.url | relative_url }}">
+    <article class="blog-card"
+      data-url="{{ post.url | relative_url }}"
+      data-title="{{ post.title | escape }}"
+      data-date="{{ post.date | date: '%b %d, %Y' }}">
       <div class="card-date">{{ post.date | date: "%b %d, %Y" }}</div>
       <h2 class="card-title">{{ post.title }}</h2>
       <p class="card-desc">{{ post.description }}</p>
@@ -38,13 +39,13 @@ title: Blog
   <div class="modal-backdrop"></div>
   <div class="modal-content">
     <button class="modal-close" aria-label="Close">&times;</button>
+    <div id="modal-spinner" class="spinner active"></div>
     <div class="modal-body">
-      <div id="modal-spinner" class="spinner active"></div>
-      <div class="modal-header" style="display:none">
+      <div class="modal-header">
         <div class="modal-date"></div>
         <h2 class="modal-title"></h2>
       </div>
-      <div class="modal-text" style="display:none"></div>
+      <div class="modal-text"></div>
     </div>
   </div>
 </div>
@@ -53,38 +54,44 @@ title: Blog
 document.addEventListener('DOMContentLoaded', function() {
   const modal = document.getElementById('post-modal');
   const cards = document.querySelectorAll('.blog-card');
+  const spinner = document.getElementById('modal-spinner');
+  const mTitle = modal.querySelector('.modal-title');
+  const mDate = modal.querySelector('.modal-date');
+  const mText = modal.querySelector('.modal-text');
+  const mHeader = modal.querySelector('.modal-header');
+  let loaded = {};
 
   cards.forEach(card => {
     card.addEventListener('click', () => {
       const url = card.dataset.url;
-      const spinner = document.getElementById('modal-spinner');
-      const header = modal.querySelector('.modal-header');
-      const text = modal.querySelector('.modal-text');
-      const mTitle = modal.querySelector('.modal-title');
-      const mDate = modal.querySelector('.modal-date');
-      const mText = modal.querySelector('.modal-text');
+      const title = card.dataset.title;
+      const date = card.dataset.date;
 
-      spinner.style.display = 'block';
-      header.style.display = 'none';
+      mTitle.textContent = title;
+      mDate.textContent = date;
+      mText.innerHTML = '';
       mText.style.display = 'none';
+      mHeader.style.display = '';
+      spinner.style.display = 'block';
       modal.classList.add('active');
       document.body.style.overflow = 'hidden';
+
+      if (loaded[url]) {
+        spinner.style.display = 'none';
+        mText.innerHTML = loaded[url];
+        mText.style.display = '';
+        return;
+      }
 
       fetch(url)
         .then(res => res.text())
         .then(html => {
-          const parser = new DOMParser();
-          const doc = parser.parseFromString(html, 'text/html');
-          const title = doc.querySelector('h1, h2')?.textContent || '';
-          const dateText = doc.querySelector('[class*="date"]')?.textContent || '';
-          const content = doc.querySelector('section, main, .post-content, article')?.innerHTML || doc.body.innerHTML;
-
-          mTitle.textContent = title;
-          mDate.textContent = dateText;
+          const doc = new DOMParser().parseFromString(html, 'text/html');
+          const main = doc.querySelector('main');
+          const content = main ? main.innerHTML : '';
+          loaded[url] = content;
           mText.innerHTML = content;
-
           spinner.style.display = 'none';
-          header.style.display = '';
           mText.style.display = '';
         });
     });
