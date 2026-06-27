@@ -3,9 +3,14 @@ layout: default
 title: Skills
 ---
 
-<div class="page-header">
-  <h1>Skills & Certifications</h1>
-  <p>Continuous learning and professional growth</p>
+<div class="page-header" style="display:flex;align-items:flex-start;justify-content:space-between;gap:1.5rem">
+  <div>
+    <h1>Skills & Certifications</h1>
+    <p>Continuous learning and professional growth</p>
+  </div>
+  <div class="page-avatar">
+    <img src="{{ '/assets/mypic.jfif' | relative_url }}" alt="Satya Dileep" loading="lazy">
+  </div>
 </div>
 
 <section>
