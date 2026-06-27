@@ -1,4 +1,4 @@
----
+﻿---
 layout: default
 title: "Robotics Maintenance: The Future-Proof Career Pivot"
 description: "By 2030, hardware maintenance for humanoid robots will be the ultimate future-proof skill; AI can think but can't fix a seized joint."
@@ -21,7 +21,7 @@ AI can think, but it can't reach through a screen to fix a seized joint.
 
 ## The 2030 Prediction
 
-By 2030, the local "computer shop" will evolve into a robotics maintenance center. The people who understand both the hardware and the software layer — who can diagnose a mechanical failure, replace a sensor, and recalibrate the agent's perception model — will be incredibly valuable.
+By 2030, the local "computer shop" will evolve into a robotics maintenance center. The people who understand both the hardware and the software layer - who can diagnose a mechanical failure, replace a sensor, and recalibrate the agent's perception model - will be incredibly valuable.
 
 ## Why This Is Future-Proof
 
@@ -31,4 +31,4 @@ The world is focused on building amazing robots. There is a deep, unmet need for
 
 ## The Takeaway
 
-If you're looking for a career pivot that won't be automated away, look at the intersection of hardware and AI. Robotics maintenance is the ultimate future-proof skill — because no amount of software can replace someone who can physically show up and fix what's broken.
+If you're looking for a career pivot that won't be automated away, look at the intersection of hardware and AI. Robotics maintenance is the ultimate future-proof skill - because no amount of software can replace someone who can physically show up and fix what's broken.

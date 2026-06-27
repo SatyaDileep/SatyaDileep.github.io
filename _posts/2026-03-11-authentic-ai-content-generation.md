@@ -1,4 +1,4 @@
----
+﻿---
 layout: default
 title: "Authentic AI Content: Making Output Sound Like You"
 description: "Using previous post content as style reference so AI-generated content matches your actual voice, not a generic one."
@@ -18,9 +18,9 @@ The fix is straightforward. When you ask an AI to generate content, provide it w
 Here's the workflow I use:
 
 1. **Collect your writing samples**: Gather 3-5 of your best posts, articles, or emails. These should represent the tone you want to replicate.
-2. **Feed them as context**: Include them in your prompt with a clear instruction — "Match this writing style."
-3. **Specify what to emulate**: Call out the specific elements you want — sentence length, use of analogies, heading structure, level of formality.
-4. **Review and adjust**: The first output will be close but not perfect. Give targeted feedback — "More direct openings," "Fewer adjectives," "Use numbered lists like I do."
+2. **Feed them as context**: Include them in your prompt with a clear instruction - "Match this writing style."
+3. **Specify what to emulate**: Call out the specific elements you want - sentence length, use of analogies, heading structure, level of formality.
+4. **Review and adjust**: The first output will be close but not perfect. Give targeted feedback - "More direct openings," "Fewer adjectives," "Use numbered lists like I do."
 
 ## Why This Works
 
@@ -28,7 +28,7 @@ Large language models are excellent at pattern matching. When you give them enou
 
 ## The Guardrail
 
-AI should accelerate your voice, not replace it. Always review the output and make final edits. The goal is 80% there — you add the last 20% that only you can provide.
+AI should accelerate your voice, not replace it. Always review the output and make final edits. The goal is 80% there - you add the last 20% that only you can provide.
 
 ## The Bottom Line
 

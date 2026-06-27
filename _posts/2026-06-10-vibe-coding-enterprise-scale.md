@@ -1,4 +1,4 @@
----
+﻿---
 layout: default
 title: "Vibe Coding at Enterprise Scale with Pega Blueprint"
 description: "Bringing the fluidity and fun of vibe coding to enterprise app building with AI-backed workflows, rules, and data models."
@@ -11,13 +11,13 @@ Pega Blueprint bridges that gap.
 
 ## What Blueprint Does
 
-Blueprint brings the fluidity and fun of vibe coding to enterprise-scale problems. You can use AI to refine your apps with chat, voice, and drag-and-drop. Business and IT can work together in a single view, and they see the changes the AI is making — not just in the app, but in the underlying structure: the workflow, the business rules, the data models.
+Blueprint brings the fluidity and fun of vibe coding to enterprise-scale problems. You can use AI to refine your apps with chat, voice, and drag-and-drop. Business and IT can work together in a single view, and they see the changes the AI is making - not just in the app, but in the underlying structure: the workflow, the business rules, the data models.
 
 ## Why This Is Different
 
 Most vibe coding tools produce throwaway prototypes. They're great for exploring an idea, but they don't generate the governance, compliance, and integration layers that enterprise applications require.
 
-Blueprint is AI-powered app building backed by the knowledge and best practices needed to scale for the enterprise. The AI doesn't just generate a UI — it generates the architecture behind it.
+Blueprint is AI-powered app building backed by the knowledge and best practices needed to scale for the enterprise. The AI doesn't just generate a UI - it generates the architecture behind it.
 
 ## The Workflow
 
@@ -28,4 +28,4 @@ Blueprint is AI-powered app building backed by the knowledge and best practices 
 
 ## The Bottom Line
 
-Vibe coding proved that building software can be fun and fast. Blueprint proves that it can also be enterprise-ready. The combination of AI creativity and platform governance is what makes this approach scalable — and it's available today.
+Vibe coding proved that building software can be fun and fast. Blueprint proves that it can also be enterprise-ready. The combination of AI creativity and platform governance is what makes this approach scalable - and it's available today.

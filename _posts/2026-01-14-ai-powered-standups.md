@@ -1,4 +1,4 @@
----
+﻿---
 layout: default
 title: "The AI-Powered Standup: A New Daily Rhythm"
 description: "How standups are evolving when AI agents become your teammates."
@@ -21,7 +21,7 @@ This isn't science fiction. This is happening now.
 
 ## What Changed?
 
-Your role shifts from **doing** to **managing**. You're no longer the executor — you're the conductor.
+Your role shifts from **doing** to **managing**. You're no longer the executor - you're the conductor.
 
 - You assign tasks to agents
 - You monitor their progress
@@ -35,6 +35,6 @@ The standup isn't about reporting hours anymore. It's about:
 - What outputs you're reviewing
 - Where you need to intervene
 
-The question isn't "What did you do?" — it's "What did you delegate, review, and refine?"
+The question isn't "What did you do?" - it's "What did you delegate, review, and refine?"
 
 Welcome to the future of work.

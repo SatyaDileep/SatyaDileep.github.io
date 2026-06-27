@@ -1,4 +1,4 @@
----
+﻿---
 layout: default
 title: "Google Opal vs. Canvas: A Hands-On Comparison"
 description: "A side-by-side evaluation of Google Opal and Canvas for building production-ready micro-apps, and why one still feels half-baked."
@@ -17,7 +17,7 @@ I tried the "vibe mode," where you ask the AI to generate assets, and it's clear
 
 ### Canvas Comparison
 
-When I put Opal's output side-by-side with my app built in Google Canvas, Opal's result looks half-baked. Canvas gives you more control over the iterative loop — you can refine, redirect, and validate at each step.
+When I put Opal's output side-by-side with my app built in Google Canvas, Opal's result looks half-baked. Canvas gives you more control over the iterative loop - you can refine, redirect, and validate at each step.
 
 ### The Simple Use Case
 

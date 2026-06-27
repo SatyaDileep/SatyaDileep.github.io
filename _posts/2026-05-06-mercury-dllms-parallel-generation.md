@@ -1,4 +1,4 @@
----
+﻿---
 layout: default
 title: "Mercury dLLMs: Parallel Token Generation Is Coming"
 description: "A massive architectural shift from sequential token-by-token generation to parallel generation for unprecedented LLM speed."
@@ -25,7 +25,7 @@ Think of it like the difference between writing a letter one character at a time
 
 ## The Trade-Off
 
-Parallel generation isn't free. The model needs to understand the global structure of the output before generating it, which requires different training approaches and potentially larger models. The quality bar is also higher — when you generate tokens in parallel, a single error can affect multiple positions simultaneously.
+Parallel generation isn't free. The model needs to understand the global structure of the output before generating it, which requires different training approaches and potentially larger models. The quality bar is also higher - when you generate tokens in parallel, a single error can affect multiple positions simultaneously.
 
 ## Where to Learn More
 
@@ -33,4 +33,4 @@ If you're a visual learner, Inception Labs has a brilliantly simple animation th
 
 ## The Bottom Line
 
-The sequential token generation model has served us well, but it's a ceiling, not a floor. Diffusion LLMs represent the next architectural leap — and when they mature, the speed improvements will be transformative for real-time AI applications.
+The sequential token generation model has served us well, but it's a ceiling, not a floor. Diffusion LLMs represent the next architectural leap - and when they mature, the speed improvements will be transformative for real-time AI applications.
