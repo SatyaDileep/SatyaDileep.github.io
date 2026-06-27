@@ -86,9 +86,14 @@ document.addEventListener('DOMContentLoaded', function() {
       fetch(url)
         .then(res => res.text())
         .then(html => {
-          const doc = new DOMParser().parseFromString(html, 'text/html');
-          const main = doc.querySelector('main');
-          const content = main ? main.innerHTML : '';
+          const startTag = '<main class="container" id="page-content">';
+          const endTag = '</main>';
+          const start = html.indexOf(startTag);
+          const end = html.indexOf(endTag, start);
+          let content = '';
+          if (start !== -1 && end !== -1) {
+            content = html.slice(start + startTag.length, end).trim();
+          }
           loaded[url] = content;
           mText.innerHTML = content;
           spinner.style.display = 'none';
@@ -103,6 +108,7 @@ document.addEventListener('DOMContentLoaded', function() {
   function closeModal() {
     modal.classList.remove('active');
     document.body.style.overflow = '';
+    setTimeout(() => { mText.innerHTML = ''; }, 300);
   }
 
   closeBtn.addEventListener('click', closeModal);
