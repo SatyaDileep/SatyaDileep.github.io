@@ -19,7 +19,7 @@ title: Contact
     <div class="contact-card">
       <div class="contact-icon">&#128188;</div>
       <h3>LinkedIn</h3>
-      <p><a href="https://www.linkedin.com/in/satya-dileepkumar-thotakura-9b25021b" target="_blank">linkedin.com/in/satya-dileep...</a></p>
+      <p><a href="https://www.linkedin.com/in/satya-dileep-kumar-thotakura-9b25021b" target="_blank">linkedin.com/in/satya-dileep...</a></p>
     </div>
 
     <div class="contact-card">

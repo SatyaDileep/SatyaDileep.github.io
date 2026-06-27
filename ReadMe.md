@@ -4,7 +4,7 @@
 
 ⏳ **Total Experience:** 13+ years *(since Feb 09, 2013)*
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?logo=linkedin&logoColor=white)](https://linkedin.com/in/satya-dileep-kumar-thotakura-9b25021b)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/satya-dileep-kumar-thotakura-9b25021b)
 [![GitHub](https://img.shields.io/badge/GitHub-181717?logo=github&logoColor=white)](https://github.com/SatyaDileep)
 [![Portfolio](https://img.shields.io/badge/Portfolio-SatyaDileep.github.io-4285F4?logo=google-chrome&logoColor=white)](https://satyadileep.github.io)
 [![Blog](https://img.shields.io/badge/Blog-Insights%20%26%20Reflections-FF6B6B?logo=jekyll&logoColor=white)](https://satyadileep.github.io/blog/)
@@ -92,6 +92,6 @@ I'm a **Product Manager** at Pegasystems, blending Generative AI with Low-Code t
 ## Connect
 
 - **Email:** [satyadileepkmr30@gmail.com](mailto:satyadileepkmr30@gmail.com)
-- **LinkedIn:** [linkedin.com/in/satya-dileep-kumar-thotakura](https://linkedin.com/in/satya-dileep-kumar-thotakura-9b25021b)
+- **LinkedIn:** [linkedin.com/in/satya-dileep-kumar-thotakura](https://www.linkedin.com/in/satya-dileep-kumar-thotakura-9b25021b)
 - **Topmate:** [Book a 1:1 session](https://topmate.io/satya_dileep_thotakura)
 - **Portfolio:** [satyadileep.github.io](https://satyadileep.github.io)

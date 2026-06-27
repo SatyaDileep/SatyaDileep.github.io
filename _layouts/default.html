@@ -49,7 +49,7 @@
   (function () {
     const toggle = document.getElementById("theme-toggle");
     const saved = localStorage.getItem("theme");
-    const isDark = saved === "dark";
+    const isDark = saved !== "light";
     
     if (isDark) document.body.classList.add("dark");
     if (toggle) {
