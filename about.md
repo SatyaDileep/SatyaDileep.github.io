@@ -23,14 +23,9 @@ title: About
 .timeline-location { font-size: 0.8rem; color: var(--muted); margin-bottom: 0.4rem; }
 </style>
 
-<div class="page-header" style="display:flex;align-items:flex-start;justify-content:space-between;gap:1.5rem">
-  <div>
-    <h1>About Me</h1>
-    <p><strong><span id="exp-years"></span> years</strong> in enterprise software, including 2+ years in product management</p>
-  </div>
-  <div class="page-avatar">
-    <img src="{{ '/assets/mypic.jfif' | relative_url }}" alt="Satya Dileep" loading="lazy">
-  </div>
+<div class="page-header">
+  <h1>About Me</h1>
+  <p><strong><span id="exp-years"></span> years</strong> in enterprise software, including 2+ years in product management</p>
 </div>
 
 <section>

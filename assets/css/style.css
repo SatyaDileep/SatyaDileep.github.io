@@ -67,13 +67,6 @@ main{animation:fadeIn 0.5s ease both}
 .page-header{margin-bottom:2rem}
 .page-header h1{margin:0 0 0.5rem;font-size:2rem;letter-spacing:-0.5px}
 .page-header p{color:var(--muted);margin:0;font-size:0.95rem}
-.page-avatar{flex-shrink:0;width:70px;height:70px;border-radius:50%;position:relative;margin-top:4px}
-.page-avatar::before{
-  content:'';position:absolute;inset:-6px;border-radius:50%;
-  background:radial-gradient(circle,var(--primary-dim) 0%,transparent 70%);
-  animation:pulseGlow 4s ease-in-out infinite;
-}
-.page-avatar img{width:70px;height:70px;border-radius:50%;object-fit:cover;position:relative;z-index:1;border:2px solid var(--border)}
 @keyframes pulseGlow{0%,50%,100%{transform:scale(1);opacity:0.5}70%{transform:scale(1.1);opacity:1}}
 .section-title{font-size:1.15rem;font-weight:700;margin:2.5rem 0 1.25rem;letter-spacing:-0.3px;color:var(--text)}
 .section-title::after{content:"";display:block;width:32px;height:3px;background:var(--primary);border-radius:4px;margin-top:6px}
