@@ -1,21 +1,20 @@
 <script>
   (function () {
     const toggle = document.getElementById("theme-toggle");
-    const saved = localStorage.getItem("theme") || "amber";
-    const themes = ["amber", "purple"];
     const labels = { amber: "☼", purple: "♾" };
     const classMap = { amber: "dark-amber", purple: "dark-purple" };
+    const valid = Object.keys(classMap);
 
     function applyTheme(theme) {
+      const t = valid.includes(theme) ? theme : "amber";
       document.body.classList.remove("dark-amber", "dark-purple");
-      document.body.classList.add(classMap[theme]);
-      if (toggle) toggle.textContent = labels[theme];
-      localStorage.setItem("theme", theme);
+      document.body.classList.add(classMap[t]);
+      if (toggle) toggle.textContent = labels[t];
+      localStorage.setItem("theme", t);
     }
 
-    if (!document.body.classList.contains("dark-amber") && !document.body.classList.contains("dark-purple")) {
-      applyTheme(saved);
-    }
+    const saved = localStorage.getItem("theme");
+    applyTheme(saved || "amber");
 
     if (toggle) {
       toggle.addEventListener("click", () => {
