@@ -10,14 +10,14 @@ title: Home
 .hero .primary { color: var(--primary); font-weight: 800; }
 .hero .subtitle { font-size: 1rem; color: var(--muted); margin-bottom: 0.75rem; font-weight: 500; }
 .hero p { color: var(--muted); margin: 0 0 1rem; font-size: 0.95rem; line-height: 1.6; }
-.hero-avatar { flex: 0 0 90px; position: relative; }
+.hero-avatar { flex: 0 0 130px; position: relative; }
 .hero-avatar::before {
-  content: ''; position: absolute; inset: -6px; border-radius: 50%;
+  content: ''; position: absolute; inset: -8px; border-radius: 50%;
   background: radial-gradient(circle, var(--primary-dim) 0%, transparent 70%);
   animation: pulseGlow 3s ease-in-out infinite;
 }
 @keyframes pulseGlow { 0%, 100% { transform: scale(1); opacity: 0.6; } 50% { transform: scale(1.08); opacity: 1; } }
-.avatar { width: 90px; height: 90px; border-radius: 50%; object-fit: cover; position: relative; z-index: 1; border: 2px solid var(--border); }
+.avatar { width: 130px; height: 130px; border-radius: 50%; object-fit: cover; position: relative; z-index: 1; border: 2px solid var(--border); }
 .status-dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: #22c55e; margin-right: 6px; vertical-align: middle; }
 .status-text { display: inline-flex; align-items: center; gap: 6px; font-size: 0.8rem; color: var(--muted); margin-bottom: 1rem; }
 .quick-links { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.75rem; margin-top: 0.5rem; }
@@ -33,8 +33,8 @@ title: Home
 .quick-link-card p { margin: 0; font-size: 0.7rem; color: var(--muted); }
 @media (max-width: 480px) {
   .hero-flex { flex-direction: column; text-align: center; gap: 1.25rem; }
-  .hero-avatar { flex: 0 0 80px; }
-  .avatar { width: 80px; height: 80px; }
+  .hero-avatar { flex: 0 0 100px; }
+  .avatar { width: 100px; height: 100px; }
   .quick-links { grid-template-columns: 1fr 1fr; gap: 0.5rem; }
   .quick-link-card { flex-direction: column; text-align: center; padding: 0.75rem; }
   .quick-link-card .qlb { align-items: center; }
@@ -47,7 +47,7 @@ title: Home
       <div class="status-text"><span class="status-dot"></span> Currently at Pegasystems</div>
       <h1>Hi, I'm <span class="primary">Satya Dileep Kumar Thotakura</span></h1>
       <p class="subtitle">AI Product Manager</p>
-      <p>I blend Generative AI with LowCode to transform user experiences. <strong><span id="exp-years"></span> years</strong> in enterprise software, 2+ years shipping PM-led AI initiatives.</p>
+      <p>I blend Generative AI with LowCode to transform user experiences. <strong><span id="exp-years"></span> years</strong> total in enterprise software, with the last 2+ years focused on product management.</p>
       <div style="margin-top:1.25rem">
         <a href="{{ '/about' | relative_url }}" class="btn">About Me</a>
         <a href="{{ '/contact' | relative_url }}" class="btn secondary">Get in Touch</a>
