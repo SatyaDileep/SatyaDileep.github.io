@@ -62,7 +62,7 @@ a.btn.secondary {
     <div class="hero-text">
       <h1>Hi, I'm <span class="primary">Satya Dileep Kumar Thotakura</span></h1>
       <p class="subtitle">AI Product Manager at Pegasystems</p>
-      <p>I blend Generative AI with LowCode to transform user experiences. 8+ years in enterprise software, 2+ years shipping PM-led AI initiatives.</p>
+      <p>I blend Generative AI with LowCode to transform user experiences. <strong><span id="exp-years"></span> years</strong> in enterprise software, 2+ years shipping PM-led AI initiatives.</p>
       <div>
         <a href="{{ '/about' | relative_url }}" class="btn">About Me</a>
         <a href="{{ '/contact' | relative_url }}" class="btn secondary">Get in Touch</a>

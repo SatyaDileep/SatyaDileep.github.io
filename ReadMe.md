@@ -2,7 +2,7 @@
 
 **AI Product Manager** — GenAI, Agentic AI & Low-Code Platforms
 
-⏳ **Total Experience:** `<!-- EXPERIENCE -->13+ years<!-- END_EXPERIENCE -->` *(since Feb 09, 2013)*
+⏳ **Total Experience:** 13+ years *(since Feb 09, 2013)*
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?logo=linkedin&logoColor=white)](https://linkedin.com/in/satya-dileep-kumar-thotakura-9b25021b)
 [![GitHub](https://img.shields.io/badge/GitHub-181717?logo=github&logoColor=white)](https://github.com/SatyaDileep)
@@ -80,12 +80,10 @@ I'm a **Product Manager** at Pegasystems, blending Generative AI with Low-Code t
 
 ## Latest Blog Posts
 
-<!-- BLOG-POST-LIST:START -->
-- [Vibe Coding at Enterprise Scale — From Prototype to Platform](https://satyadileep.github.io/blog/) — Jun 2026
-- [AI Healthcare Report Decoder — Building an Empathetic Medical AI Agent](https://satyadileep.github.io/blog/) — Jun 2026
-- [The Adification of Indian Apps](https://satyadileep.github.io/blog/) — May 2026
-- [Maya Philosophy for Products: Most Advanced Yet Acceptable](https://satyadileep.github.io/blog/) — May 2026
-<!-- BLOG-POST-LIST:END -->
+- [Vibe Coding at Enterprise Scale - From Prototype to Platform](https://satyadileep.github.io/blog/) - Jun 2026
+- [AI Healthcare Report Decoder - Building an Empathetic Medical AI Agent](https://satyadileep.github.io/blog/) - Jun 2026
+- [The Adification of Indian Apps](https://satyadileep.github.io/blog/) - May 2026
+- [Maya Philosophy for Products: Most Advanced Yet Acceptable](https://satyadileep.github.io/blog/) - May 2026
 
 *[Read all 28 posts →](https://satyadileep.github.io/blog/)*
 

@@ -43,15 +43,22 @@
     const isDark = saved === "dark";
     
     if (isDark) document.body.classList.add("dark");
-    toggle.textContent = isDark ? "☼" : "☾";
-    
     if (toggle) {
+      toggle.textContent = isDark ? "☼" : "☾";
       toggle.addEventListener("click", () => {
-        const isDark = document.body.classList.toggle("dark");
-        localStorage.setItem("theme", isDark ? "dark" : "light");
-        toggle.textContent = isDark ? "☼" : "☾";
+        const d = document.body.classList.toggle("dark");
+        localStorage.setItem("theme", d ? "dark" : "light");
+        toggle.textContent = d ? "☼" : "☾";
       });
     }
+
+    const start = new Date(2013, 1, 9);
+    const now = new Date();
+    let years = now.getFullYear() - start.getFullYear();
+    const m = now.getMonth() - start.getMonth();
+    if (m < 0 || (m === 0 && now.getDate() < start.getDate())) years--;
+    const el = document.getElementById("exp-years");
+    if (el) el.textContent = years;
   })();
 </script>
 
