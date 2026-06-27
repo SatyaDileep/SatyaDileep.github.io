@@ -18,7 +18,7 @@ I'm a **Product Manager** at Pegasystems, blending Generative AI with Low-Code t
 - **Role:** Conductor of Agents — designing systems, prompting agents, and refining outcomes
 - **Mindset:** Pragmatic Builder — velocity of delivery over theoretical perfection
 - **Focus:** Making complex AI capabilities intuitive for citizen developers
-- **Experience:** 8+ years in enterprise software, 2+ years shipping PM-led AI initiatives
+- **Experience:** 13+ years in enterprise software, including 2+ years in product management
 
 ---
 

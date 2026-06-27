@@ -25,7 +25,7 @@ title: About
 
 <div class="page-header">
   <h1>About Me</h1>
-  <p><strong><span id="exp-years"></span> years</strong> building enterprise products, 2+ years in product management</p>
+  <p><strong><span id="exp-years"></span> years</strong> in enterprise software, including 2+ years in product management</p>
 </div>
 
 <section>
