@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "VoiceToIdea — Turning Mind Dumps into Actionable Outcomes"
+title: "VoiceToIdea: Turning Mind Dumps into Actionable Outcomes"
 description: "A practical workflow that transforms spoken notes into canvases, mockups, and publishable artifacts."
 tags: [product-management, workflows, agentic-ai, productivity]
 ---

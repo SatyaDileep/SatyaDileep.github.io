@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Making Meaning Over Making Money"
-description: "Why meaning is the fuel that sustains you through the grind — and why money is just the result."
+description: "Why meaning is the fuel that sustains you through the grind, and why money is just the result."
 tags: [career, philosophy, productivity, growth]
 ---
 

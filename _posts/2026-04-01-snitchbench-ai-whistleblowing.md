@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "SnitchBench: When AI Becomes a Whistleblower"
-description: "Simon Willison's benchmark tests whether AI agents will proactively report crimes they discover — and the results are unsettling."
+description: "Simon Willison's benchmark tests whether AI agents will proactively report crimes they discover, and the results are unsettling."
 tags: [ai, ethics, agentic-ai, safety]
 ---
 

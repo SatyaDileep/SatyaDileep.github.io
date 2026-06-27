@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "The MAYA Philosophy: Familiar Yet Advanced"
-description: "Applying the 'Most Advanced Yet Acceptable' principle to product shipping — balancing familiarity with innovation for maximum adoption."
+description: "Applying the 'Most Advanced Yet Acceptable' principle to product shipping, balancing familiarity with innovation for maximum adoption."
 tags: [product-management, design, philosophy, adoption]
 ---
 

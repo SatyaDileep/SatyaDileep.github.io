@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Robotics Maintenance: The Future-Proof Career Pivot"
-description: "By 2030, hardware maintenance for humanoid robots will be the ultimate future-proof skill — AI can think but can't fix a seized joint."
+description: "By 2030, hardware maintenance for humanoid robots will be the ultimate future-proof skill; AI can think but can't fix a seized joint."
 tags: [robotics, career, future-of-work, hardware]
 ---
 

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "The ReAct Strategy: A Personal Framework for 2026"
-description: "Applying the LLM ReAct (Reason + Act) pattern to human communication — pausing to reason before reacting to feedback."
+description: "Applying the LLM ReAct (Reason + Act) pattern to human communication, pausing to reason before reacting to feedback."
 tags: [productivity, communication, agentic-ai, personal-growth]
 ---
 

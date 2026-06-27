@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Google Opal vs. Canvas: A Hands-On Comparison"
-description: "A side-by-side evaluation of Google Opal and Canvas for building production-ready micro-apps — and why one still feels half-baked."
+description: "A side-by-side evaluation of Google Opal and Canvas for building production-ready micro-apps, and why one still feels half-baked."
 tags: [google, micro-apps, generative-ai, tools]
 ---
 

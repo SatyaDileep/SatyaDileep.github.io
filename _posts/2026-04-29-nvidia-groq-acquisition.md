@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "NVIDIA's Groq Acquisition: Innovation Help or Hindrance?"
-description: "When a disruptor gets absorbed by an incumbent — does it scale innovation faster or remove the competitive pressure that drove progress?"
+description: "When a disruptor gets absorbed by an incumbent, does it scale innovation faster or remove the competitive pressure that drove progress?"
 tags: [ai, industry, nvidia, groq, analysis]
 ---
 

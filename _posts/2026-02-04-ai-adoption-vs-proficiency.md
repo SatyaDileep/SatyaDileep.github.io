@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "AI Adoption vs AI Proficiency: The Professional's Gap"
-description: "There's a massive gap between adopting a tool and being proficient with it — and most professionals are missing the distinction."
+description: "There's a massive gap between adopting a tool and being proficient with it, and most professionals are missing the distinction."
 tags: [agentic-ai, career, productivity, skills]
 ---
 
