@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "In the products we’re building at Pega, these principles are live: 1. Our a…"
-description: "In the products we’re building at Pega, these principles are live: 1. Our agents handle ambiguity, orchestrate complex tasks end-to-end, and adapt seamlessly across multiple tools.…"
+title: "In the products we’re building at Pega, these principles are live: 1"
+description: "In the products we’re building at Pega, these principles are live: 1. Our agents handle ambiguity, orchestrate complex tasks end-to-end, and adapt seamlessly across multiple tools...."
 tags: [agenticaihackathon, githubcodespaces]
 source: linkedin
 linkedin_url: https://www.linkedin.com/in/satya-dileep-kumar-thotakura-9b25021b/

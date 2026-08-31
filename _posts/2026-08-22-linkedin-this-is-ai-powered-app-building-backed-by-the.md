@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "This is AI-powered app building backed by the knowledge and best practices …"
-description: "This is AI-powered app building backed by the knowledge and best practices to scale it for the enterprise. And it's free for anyone to use, today. Check it out at the link below. T…"
+title: "This is AI-powered app building backed by the knowledge and best practices ..."
+description: "This is AI-powered app building backed by the knowledge and best practices to scale it for the enterprise. And it's free for anyone to use, today. Check it out at the link below. T..."
 tags: [linkedin, githubpages, repository]
 source: linkedin
 linkedin_url: https://www.linkedin.com/in/satya-dileep-kumar-thotakura-9b25021b/

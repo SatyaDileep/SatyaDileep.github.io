@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "I recently added a personal reminder for the year ahead, and it’s a lesson …"
-description: "I recently added a personal reminder for the year ahead, and it’s a lesson I’ve borrowed directly from AI #LLMs can learn from us, but there’s a specific Agentic Design Pattern hum…"
+title: "I recently added a personal reminder for the year ahead, and it’s a lesson ..."
+description: "I recently added a personal reminder for the year ahead, and it’s a lesson I’ve borrowed directly from AI #LLMs can learn from us, but there’s a specific Agentic Design Pattern hum..."
 tags: [llms, feedback, react, browsing]
 source: linkedin
 linkedin_url: https://www.linkedin.com/in/satya-dileep-kumar-thotakura-9b25021b/
