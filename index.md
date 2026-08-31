@@ -48,7 +48,7 @@ title: Home
       <p class="tagline">I turn complex AI into products people actually use. <strong><span id="exp-years"></span> years</strong> shipping enterprise software — now building GenAI & Agentic AI for low-code platforms that Fortune 500 teams trust.</p>
       <div class="hero-btns">
         <a href="{{ '/micro-apps/' | relative_url }}" class="btn">View Live Builds →</a>
-        <a href="{{ '/about' | relative_url }}" class="btn secondary">About Me</a>
+        <a href="{{ '/linkedin/' | relative_url }}" class="btn secondary">90 LinkedIn Posts →</a>
       </div>
     </div>
   </div>
@@ -118,12 +118,12 @@ title: Home
     <a href="{{ '/micro-apps/' | relative_url }}" class="card-link" style="display:flex;flex-direction:column;align-items:center;gap:0.35rem;padding:1.15rem 0.75rem;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);text-decoration:none;text-align:center">
       <span class="ico" style="font-size:1.5rem">🛠️</span>
       <h3 style="margin:0;font-size:0.85rem;color:var(--text)">Work</h3>
-      <p style="margin:0;font-size:0.7rem;color:var(--muted)">3 live builds + experiments</p>
+      <p style="margin:0;font-size:0.7rem;color:var(--muted)">3 live builds</p>
     </a>
-    <a href="{{ '/blog' | relative_url }}" class="card-link" style="display:flex;flex-direction:column;align-items:center;gap:0.35rem;padding:1.15rem 0.75rem;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);text-decoration:none;text-align:center">
-      <span class="ico" style="font-size:1.5rem">✍️</span>
-      <h3 style="margin:0;font-size:0.85rem;color:var(--text)">Blog</h3>
-      <p style="margin:0;font-size:0.7rem;color:var(--muted)">Thoughts on AI & PM</p>
+    <a href="{{ '/linkedin/' | relative_url }}" class="card-link" style="display:flex;flex-direction:column;align-items:center;gap:0.35rem;padding:1.15rem 0.75rem;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);text-decoration:none;text-align:center;background:linear-gradient(135deg, rgba(37,99,235,0.06), rgba(139,92,246,0.06))">
+      <span class="ico" style="font-size:1.5rem">💼</span>
+      <h3 style="margin:0;font-size:0.85rem;color:var(--text)">LinkedIn</h3>
+      <p style="margin:0;font-size:0.7rem;color:var(--muted)">90 posts archive</p>
     </a>
   </div>
 </section>

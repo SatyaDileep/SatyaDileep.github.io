@@ -1,0 +1,10 @@
+---
+layout: default
+title: "AIAgents advancing at this pace, I'm convinced software engineering is shif…"
+description: "#AIAgents advancing at this pace, I'm convinced software engineering is shifting towards code management. #designpatterns, and architecture. DhanunjayaRao Bandlamudi (DJ) and 9 oth…"
+tags: [aiagents, designpatterns, robots, developers, machines]
+source: linkedin
+linkedin_url: https://www.linkedin.com/in/satya-dileep-kumar-thotakura-9b25021b/
+---
+
+#AIAgents advancing at this pace, I'm convinced software engineering is shifting towards code management. #designpatterns, and architecture. DhanunjayaRao Bandlamudi (DJ) and 9 others One strong bet: By the end of this year or early next, we'll see a surge in #robots are becoming increasingly integrated into our daily lives, going forward, they won't be fully programmed, but rather will come with basic capabilities like walking, talking, and listening - think of them as 'robotic infrastructure as a service'. The exciting part is that #developers will be able to build and deploy applications on top of these robots, dynamically shipping software to enhance their capabilities. Imagine a Robot App Store where developers can create and share apps that can be easily installed and tested on #robots, turning them into versatile #machines that can perform a wide range of tasks. #revolutionize the way we interact with robots, making them more accessible and useful in various industries and settings. DhanunjayaRao Bandlamudi (DJ) and 3 others Just had a wild thought 🤯 - as space-based data centres become a reality, are we looking at a future where tech professionals need to pack their bags (and spacesuits 🚀) for orbital repairs? 😄 Imagine the commute: "Today's schedule: fix a server on #Mars, grab lunch on the #moon, and troubleshoot a chip on the ISS... all before dinner! 🍴 What's the most cost-optimised model for these space-age? - repair-in-orbit or return-to-Earth? 🤔 Share your thoughts! Chaitra Kamaraju and 3 others 🔮 My hunch for 2030—let’s see if I’m right in a few years.
