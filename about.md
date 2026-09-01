@@ -4,27 +4,34 @@ title: About
 ---
 
 <style>
-.timeline { position: relative; padding-left: 2rem; }
+.timeline { position: relative; padding-left: 2.5rem; padding-bottom: 1rem; }
 .timeline::before {
-  content: ''; position: absolute; left: 0; top: 4px; bottom: 4px;
-  width: 2px; background: var(--border); border-radius: 2px;
+  content: ''; position: absolute; left: 5px; top: 4px; bottom: 4px;
+  width: 2px; background: linear-gradient(to bottom, var(--primary), var(--border)); border-radius: 2px;
 }
 .timeline-item { position: relative; margin-bottom: 2rem; }
 .timeline-item::before {
-  content: ''; position: absolute; left: -2rem; top: 6px;
+  content: ''; position: absolute; left: -2.5rem; top: 6px;
   width: 12px; height: 12px; border-radius: 50%;
   background: var(--surface); border: 2px solid var(--primary);
-  transform: translateX(-5px); z-index: 1;
+  transform: translateX(0); z-index: 1;
 }
-.timeline-date { font-size: 0.8rem; color: var(--muted); margin-bottom: 0.2rem; text-transform: uppercase; letter-spacing: 0.4px; }
+.timeline-item:first-child::before {
+  background: var(--primary); border-color: var(--primary);
+  box-shadow: 0 0 10px rgba(168,85,247,0.5), 0 0 20px rgba(168,85,247,0.3);
+}
+.timeline-date { font-size: 0.8rem; color: #9ca3af; margin-bottom: 0.2rem; text-transform: uppercase; letter-spacing: 0.4px; font-weight: 500; }
 .timeline-title { margin: 0 0 0.15rem; font-size: 1.05rem; }
-.timeline-company { color: var(--primary); font-weight: 600; margin-bottom: 0.3rem; font-size: 0.9rem; }
-.timeline-desc { color: var(--muted); font-size: 0.9rem; margin: 0 0 0.5rem; line-height: 1.6; }
+.timeline-company { color: var(--primary); font-weight: 600; margin-bottom: 0.3rem; font-size: 0.9rem; transition: all 0.2s; }
+.timeline-company:hover { filter: brightness(1.3); text-decoration: underline; text-underline-offset: 3px; cursor: pointer; }
+.timeline-desc { color: var(--muted); font-size: 0.9rem; margin: 0 0 0.5rem; line-height: 1.65; }
 .timeline-location { font-size: 0.8rem; color: var(--muted); margin-bottom: 0.4rem; }
-section:last-child .timeline:last-child { margin-bottom: 0; }
-section:last-child { margin-bottom: 0; }
+.timeline + .section-title { margin-top: 0; }
+section { padding-bottom: 8rem; }
+section:last-child { padding-bottom: 8rem; }
 .page-header { margin-bottom: 1rem; }
 .section-title { margin-top: 1.5rem; }
+.tech-tag{ display:inline-block; padding:4px 12px; border-radius:6px; font-size:0.7rem; font-weight:600; letter-spacing:0.2px; background:rgba(88,28,135,0.3); color:var(--primary); border:1px solid rgba(139,92,246,0.2); margin-right:6px; margin-top:6px; }
 </style>
 
 <div class="page-header">

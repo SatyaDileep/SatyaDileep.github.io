@@ -30,13 +30,13 @@ body.dark .ln-card{background:rgba(22,18,36,0.45);border-color:rgba(255,255,255,
 </style>
 
 <div class="linkedin-header">
-  <h1>LinkedIn Archive — 90 posts</h1>
-  <p>Your full public activity from <a href="https://www.linkedin.com/in/satya-dileep-kumar-thotakura-9b25021b/" target="_blank">linkedin.com/in/satya-dileep</a> — scraped via <code>Agent-Reach</code> + local delta. Search, filter by tag, and open any post. The top 17 long-form posts are also mirrored as <a href="{{ '/blog' | relative_url }}">Blog entries</a>.</p>
+  <h1>LinkedIn Archive — 14 posts</h1>
+  <p>Your full public activity from <a href="https://www.linkedin.com/in/satya-dileep-kumar-thotakura-9b25021b/" target="_blank">linkedin.com/in/satya-dileep</a> — scraped via <code>Exa livecrawl</code> (full text, no 210-char cut). Search, filter by tag, and open any post. Clean 2026-only rebuild.</p>
 </div>
 
 <div class="linkedin-toolbar">
   <div class="search-wrap"><input id="ln-search" placeholder="Search posts… (e.g. Pega, GenAI, Blueprint)"></div>
-  <span class="count-pill" id="ln-count">90 posts</span>
+  <span class="count-pill" id="ln-count">14 posts</span>
   <a href="https://www.linkedin.com/in/satya-dileep-kumar-thotakura-9b25021b/" target="_blank" class="btn" style="padding:0.45rem 0.9rem;font-size:0.8rem">Open LinkedIn →</a>
 </div>
 

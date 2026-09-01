@@ -5,31 +5,33 @@ title: Blog
 
 <style>
 .blog-hero{position:relative;overflow:hidden;background:rgba(255,255,255,0.52);backdrop-filter:blur(16px) saturate(1.25);border:1px solid rgba(255,255,255,0.6);border-radius:20px;padding:1.4rem 1.5rem 1.1rem;margin-bottom:1.5rem;box-shadow:0 8px 32px rgba(37,99,235,0.06)}
-body.dark .blog-hero{background:rgba(18,22,34,0.42);border-color:rgba(255,255,255,0.06)}
-.blog-hero .mesh::before{content:'';position:absolute;width:280px;height:280px;right:-60px;top:-80px;background:radial-gradient(circle, rgba(37,99,235,0.12), transparent 70%);filter:blur(8px);pointer-events:none}
+body.dark .blog-hero,body.dark-amber .blog-hero,body.dark-purple .blog-hero{background:rgba(22,16,36,0.55);border-color:rgba(255,255,255,0.1);box-shadow:0 8px 32px rgba(0,0,0,0.35),inset 0 1px 0 rgba(255,255,255,0.06)}
+.blog-hero .mesh::before{content:'';position:absolute;width:420px;height:420px;right:-80px;top:-100px;background:radial-gradient(circle at 30% 30%, rgba(139,92,246,0.18), transparent 65%);filter:blur(12px);pointer-events:none}
+.blog-hero .mesh::after{content:'';position:absolute;width:340px;height:340px;left:-60px;bottom:-90px;background:radial-gradient(circle at 70% 70%, rgba(245,158,11,0.08), transparent 65%);filter:blur(10px);pointer-events:none}
+body.dark-purple .blog-hero .mesh::before{background:radial-gradient(circle at 30% 30%, rgba(139,92,246,0.25), transparent 65%)}
 .blog-hero h1{margin:0 0 0.3rem;font-size:1.55rem;letter-spacing:-0.4px;position:relative}
 .blog-hero p{color:var(--muted);margin:0;font-size:0.9rem;line-height:1.6;position:relative}
 .blog-hero .cta-row{margin-top:0.9rem;display:flex;gap:0.6rem;flex-wrap:wrap;position:relative}
 .pill{font-size:0.7rem;font-weight:700;padding:0.3rem 0.7rem;border-radius:999px;background:var(--primary-dim);color:var(--primary)}
-.blog-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1rem}
-.blog-card{position:relative;overflow:hidden;background:rgba(255,255,255,0.62);backdrop-filter:blur(12px) saturate(1.15);border:1px solid rgba(255,255,255,0.58);border-radius:16px;padding:1.2rem;cursor:pointer;transition:var(--transition);display:flex;flex-direction:column;min-height:170px}
-body.dark .blog-card{background:rgba(22,18,36,0.42);border-color:rgba(255,255,255,0.07)}
-.blog-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-lg);border-color:var(--primary)}
+.blog-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1rem;padding-bottom:10rem}
+.blog-card{position:relative;overflow:hidden;background:rgba(255,255,255,0.05);backdrop-filter:blur(12px) saturate(1.15);border:1px solid rgba(255,255,255,0.1);border-radius:16px;padding:1.2rem;cursor:pointer;transition:all 300ms cubic-bezier(0.4,0,0.2,1);display:flex;flex-direction:column;min-height:170px}
+body.dark .blog-card,body.dark-amber .blog-card,body.dark-purple .blog-card{background:rgba(255,255,255,0.05);border-color:rgba(255,255,255,0.1)}
+.blog-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,0.4);border-color:rgba(139,92,246,0.3)}
 .blog-card .card-date{font-size:0.68rem;color:var(--muted);letter-spacing:0.5px;text-transform:uppercase;margin-bottom:0.35rem}
-.blog-card .card-title{margin:0 0 0.4rem;font-size:1rem;line-height:1.35}
-.blog-card .card-desc{margin:0;color:var(--muted);font-size:0.83rem;line-height:1.55;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;flex:1}
-.blog-card .card-tags{margin-top:0.7rem;display:flex;flex-wrap:wrap;gap:0.35rem}
-.blog-card .tag{font-size:0.6rem;font-weight:700;padding:2px 7px;border-radius:999px;background:var(--primary-dim);color:var(--primary)}
-.card-top{height:3px;background:linear-gradient(90deg,var(--primary),var(--accent));border-radius:4px;margin:-1.2rem -1.2rem 0.9rem -1.2rem;opacity:0}
+.blog-card .card-title{margin:0 0 0.45rem;font-size:1rem;line-height:1.35;font-weight:600;color:#f3f4f6}
+.blog-card .card-desc{margin:0;color:#9ca3af;font-size:0.83rem;line-height:1.7;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;flex:1}
+.blog-card .card-tags{margin-top:0.75rem;display:flex;flex-wrap:wrap;gap:0.35rem}
+.blog-card .tag{font-size:0.68rem;font-weight:600;padding:4px 8px;border-radius:6px;background:rgba(139,92,246,0.1);color:#c4b5fd;border:1px solid rgba(139,92,246,0.15)}
+.card-top{height:3px;background:linear-gradient(90deg,var(--primary),var(--accent));border-radius:4px;margin:-1.2rem -1.2rem 0.9rem -1.2rem;opacity:0;transition:opacity 300ms}
 .blog-card:hover .card-top{opacity:1}
 </style>
 
 <div class="blog-hero">
   <div class="mesh"></div>
   <h1>Insights & Reflections</h1>
-  <p>Curated long-form thinking on Agentic AI, product strategy, and the shift from execution to orchestration. <span class="pill">12 articles</span> · For the full 53-post LinkedIn history, see the archive.</p>
+  <p>Curated long-form thinking on Agentic AI, product strategy, and the shift from execution to orchestration. <span class="pill">14 articles</span> · For the full 2026 LinkedIn history, see the archive.</p>
   <div class="cta-row">
-    <a href="{{ '/linkedin/' | relative_url }}" class="btn" style="padding:0.45rem 0.95rem;font-size:0.85rem">LinkedIn Archive (53) →</a>
+    <a href="{{ '/linkedin/' | relative_url }}" class="btn" style="padding:0.45rem 0.95rem;font-size:0.85rem">LinkedIn Archive (14) →</a>
     <span style="align-self:center;font-size:0.78rem;color:var(--muted)">Pure posts only — no reactions, full text even >210 chars</span>
   </div>
 </div>
