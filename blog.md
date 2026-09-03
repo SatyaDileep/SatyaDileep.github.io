@@ -4,7 +4,7 @@ title: Blog
 ---
 
 <style>
-.blog-hero{position:relative;overflow:hidden;background:rgba(255,255,255,0.52);backdrop-filter:blur(16px) saturate(1.25);border:1px solid rgba(255,255,255,0.6);border-radius:20px;padding:1.4rem 1.5rem 1.1rem;margin-bottom:1.5rem;box-shadow:0 8px 32px rgba(37,99,235,0.06)}
+.blog-hero{position:relative;overflow:hidden;background:rgba(255,255,255,0.52);backdrop-filter:blur(16px) saturate(1.25);border:1px solid rgba(255,255,255,0.6);border-radius:20px;padding:1.4rem 1.5rem 1.1rem;margin-bottom:1.2rem;box-shadow:0 8px 32px rgba(37,99,235,0.06)}
 body.dark .blog-hero,body.dark-amber .blog-hero,body.dark-purple .blog-hero{background:rgba(22,16,36,0.55);border-color:rgba(255,255,255,0.1);box-shadow:0 8px 32px rgba(0,0,0,0.35),inset 0 1px 0 rgba(255,255,255,0.06)}
 .blog-hero .mesh::before{content:'';position:absolute;width:420px;height:420px;right:-80px;top:-100px;background:radial-gradient(circle at 30% 30%, rgba(139,92,246,0.18), transparent 65%);filter:blur(12px);pointer-events:none}
 .blog-hero .mesh::after{content:'';position:absolute;width:340px;height:340px;left:-60px;bottom:-90px;background:radial-gradient(circle at 70% 70%, rgba(245,158,11,0.08), transparent 65%);filter:blur(10px);pointer-events:none}
@@ -13,6 +13,10 @@ body.dark-purple .blog-hero .mesh::before{background:radial-gradient(circle at 3
 .blog-hero p{color:var(--muted);margin:0;font-size:0.9rem;line-height:1.6;position:relative}
 .blog-hero .cta-row{margin-top:0.9rem;display:flex;gap:0.6rem;flex-wrap:wrap;position:relative}
 .pill{font-size:0.7rem;font-weight:700;padding:0.3rem 0.7rem;border-radius:999px;background:var(--primary-dim);color:var(--primary)}
+.blog-tabs{display:flex;gap:0.5rem;justify-content:center;margin:0 0 1.2rem}
+.tab-btn{padding:0.45rem 1rem;border-radius:999px;border:1px solid var(--border);background:rgba(255,255,255,0.6);color:var(--muted);font-weight:600;font-size:0.82rem;cursor:pointer;transition:all 0.3s}
+body.dark .tab-btn{background:rgba(255,255,255,0.05);border-color:rgba(255,255,255,0.1)}
+.tab-btn.active{background:var(--primary);color:#fff;border-color:var(--primary)}
 .blog-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1rem;padding-bottom:10rem}
 .blog-card{position:relative;overflow:hidden;background:rgba(255,255,255,0.05);backdrop-filter:blur(12px) saturate(1.15);border:1px solid rgba(255,255,255,0.1);border-radius:16px;padding:1.2rem;cursor:pointer;transition:all 300ms cubic-bezier(0.4,0,0.2,1);display:flex;flex-direction:column;min-height:170px}
 body.dark .blog-card,body.dark-amber .blog-card,body.dark-purple .blog-card{background:rgba(255,255,255,0.05);border-color:rgba(255,255,255,0.1)}
@@ -28,15 +32,19 @@ body.dark .blog-card,body.dark-amber .blog-card,body.dark-purple .blog-card{back
 
 <div class="blog-hero">
   <div class="mesh"></div>
-  <h1>Insights & Reflections</h1>
-  <p>Curated long-form thinking on Agentic AI, product strategy, and the shift from execution to orchestration. <span class="pill">14 articles</span> · For the full 2026 LinkedIn history, see the archive.</p>
+  <h1>Blog & Feed</h1>
+  <p>Curated long-form articles on Agentic AI and product strategy, alongside real-time professional updates and thoughts.</p>
   <div class="cta-row">
-    <a href="{{ '/linkedin/' | relative_url }}" class="btn" style="padding:0.45rem 0.95rem;font-size:0.85rem">LinkedIn Archive (14) →</a>
-    <span style="align-self:center;font-size:0.78rem;color:var(--muted)">Pure posts only — no reactions, full text even >210 chars</span>
+    <a href="https://satyadileep.github.io/linkedin/" class="btn" style="padding:0.45rem 0.95rem;font-size:0.85rem">View LinkedIn Feed →</a>
   </div>
 </div>
 
-<div class="blog-grid">
+<div class="blog-tabs">
+  <button class="tab-btn active" data-tab="articles">Long-form Articles</button>
+  <button class="tab-btn" data-tab="feed">Short-form Feed</button>
+</div>
+
+<div id="articles-grid" class="blog-grid">
   {% assign curated = site.posts | where_exp: "p", "p.source != 'linkedin'" | sort: 'date' | reverse %}
   {% for post in curated %}
     <article class="blog-card"
@@ -47,6 +55,28 @@ body.dark .blog-card,body.dark-amber .blog-card,body.dark-purple .blog-card{back
       <div class="card-date">{{ post.date | date: "%b %d, %Y" }}</div>
       <h2 class="card-title">{{ post.title }}</h2>
       <p class="card-desc">{{ post.description }}</p>
+      {% if post.tags %}
+      <div class="card-tags">
+        {% for tag in post.tags limit:4 %}
+          <span class="tag">#{{ tag }}</span>
+        {% endfor %}
+      </div>
+      {% endif %}
+    </article>
+  {% endfor %}
+</div>
+
+<div id="feed-grid" class="blog-grid" style="display:none">
+  {% for post in site.data.linkedin_posts %}
+    <article class="blog-card feed-card"
+      data-text="{{ post.text | escape }}"
+      data-title="{{ post.title | escape }}"
+      data-date="{{ post.date }}"
+      data-url="{{ post.url }}">
+      <div class="card-top"></div>
+      <div class="card-date">{{ post.date }} · {{ post.chars }} chars</div>
+      <h2 class="card-title">{{ post.title }}</h2>
+      <p class="card-desc">{{ post.excerpt }}</p>
       {% if post.tags %}
       <div class="card-tags">
         {% for tag in post.tags limit:4 %}
@@ -75,15 +105,27 @@ body.dark .blog-card,body.dark-amber .blog-card,body.dark-purple .blog-card{back
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
+  const tabs = document.querySelectorAll('.tab-btn');
+  const articlesGrid = document.getElementById('articles-grid');
+  const feedGrid = document.getElementById('feed-grid');
+  tabs.forEach(btn => {
+    btn.addEventListener('click', () => {
+      tabs.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const tab = btn.dataset.tab;
+      if (tab === 'articles') { articlesGrid.style.display = 'grid'; feedGrid.style.display = 'none'; }
+      else { articlesGrid.style.display = 'none'; feedGrid.style.display = 'grid'; }
+    });
+  });
+
   const modal = document.getElementById('post-modal');
-  const cards = document.querySelectorAll('.blog-card');
   const spinner = document.getElementById('modal-spinner');
   const mTitle = modal.querySelector('.modal-title');
   const mDate = modal.querySelector('.modal-date');
   const mText = modal.querySelector('.modal-text');
   const mHeader = modal.querySelector('.modal-header');
   let loaded = {};
-  cards.forEach(card => {
+  document.querySelectorAll('#articles-grid .blog-card').forEach(card => {
     card.addEventListener('click', () => {
       const url = card.dataset.url;
       const title = card.dataset.title;
@@ -114,6 +156,18 @@ document.addEventListener('DOMContentLoaded', function() {
         spinner.style.display = 'none';
         mText.style.display = '';
       });
+    });
+  });
+  document.querySelectorAll('#feed-grid .blog-card').forEach(card => {
+    card.addEventListener('click', () => {
+      mTitle.textContent = card.dataset.title;
+      mDate.textContent = card.dataset.date;
+      mText.innerHTML = '<p style="white-space:pre-wrap;line-height:1.7">' + card.dataset.text + '</p><p style="margin-top:1rem"><a href="' + card.dataset.url + '" target="_blank" style="font-weight:700">View on LinkedIn →</a></p>';
+      mText.style.display = '';
+      mHeader.style.display = '';
+      spinner.style.display = 'none';
+      modal.classList.add('active');
+      document.body.style.overflow = 'hidden';
     });
   });
   const closeBtn = modal.querySelector('.modal-close');
