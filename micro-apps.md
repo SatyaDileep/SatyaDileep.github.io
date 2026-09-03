@@ -28,7 +28,7 @@ redirect_from:
     </article>
     <article class="featured-card">
       <div class="featured-body">
-        <h3>DocBridge — One Upload Layer for India</h3>
+        <h3>DocBridge — Universal Upload Layer</h3>
         <p>Citizen-centric upload solution that normalizes government portal requirements for photos and documents. Integrates DigiLocker with on-device processing to prevent rejections without exposing sensitive files. Available as web app and browser extension.</p>
         <div class="featured-meta"><span class="mini-tag">Next.js</span><span class="mini-tag">DigiLocker</span><span class="mini-tag">Browser Processing</span><span class="mini-tag">Chrome Extension</span></div>
         <div class="featured-actions">
