@@ -48,15 +48,16 @@
 <script>
   (function () {
     const toggle = document.getElementById("theme-toggle");
-    const labels = { amber: "☀", purple: "☾" };
-    const classMap = { amber: "dark-amber", purple: "dark-purple" };
+    const labels = { light: "☀", amber: "☼", purple: "☾" };
+    const classMap = { light: "", amber: "dark-amber", purple: "dark-purple" };
     const valid = Object.keys(classMap);
+    const order = ["light", "amber", "purple"];
 
     function applyTheme(theme) {
-      const t = valid.includes(theme) ? theme : "amber";
+      const t = valid.includes(theme) ? theme : "light";
       if (document.body) {
         document.body.classList.remove("dark-amber", "dark-purple");
-        document.body.classList.add(classMap[t]);
+        if (classMap[t]) document.body.classList.add(classMap[t]);
       }
       if (toggle) toggle.textContent = labels[t];
       localStorage.setItem("theme", t);
@@ -64,19 +65,20 @@
 
     const mql = window.matchMedia('(prefers-color-scheme: dark)');
     const saved = localStorage.getItem("theme");
-    if (!saved && mql.matches) {
-      applyTheme("purple");
+    if (!saved) {
+      applyTheme(mql.matches ? "purple" : "light");
     } else {
-      applyTheme(saved || "amber");
+      applyTheme(saved);
     }
     mql.addEventListener('change', (e) => {
-      if (!localStorage.getItem("theme")) applyTheme(e.matches ? "purple" : "amber");
+      if (!localStorage.getItem("theme")) applyTheme(e.matches ? "purple" : "light");
     });
 
     if (toggle) {
       toggle.addEventListener("click", () => {
-        const current = localStorage.getItem("theme") || "amber";
-        const next = current === "amber" ? "purple" : "amber";
+        const current = localStorage.getItem("theme") || "light";
+        const idx = order.indexOf(current);
+        const next = order[(idx + 1) % order.length];
         applyTheme(next);
       });
     }

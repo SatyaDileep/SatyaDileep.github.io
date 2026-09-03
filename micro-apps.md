@@ -51,7 +51,7 @@ permalink: /micro-apps/
 
 <section>
   <details class="earlier-wrap">
-    <summary>Earlier experiments — not deployed (kept for reference)</summary>
+    <summary>Earlier experiments — not deployed</summary>
     <div class="earlier-grid">
       <div class="earlier-card">
         <h4>LinkedIn Card Creator (legacy)</h4>
