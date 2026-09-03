@@ -4,7 +4,19 @@
   <meta charset="UTF-8">
   <title>{{ page.title | default: site.title }}</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+  <script>
+    (function() {
+      try {
+        var t = localStorage.getItem("theme");
+        var m = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        var theme = t || (m ? "purple" : "light");
+        if (theme !== "light") document.documentElement.classList.add(theme === "amber" ? "dark-amber" : "dark-purple");
+        document.documentElement.setAttribute("data-theme", theme);
+      } catch(e) {}
+    })();
+  </script>
 </head>
 <body>
 
@@ -55,6 +67,11 @@
 
     function applyTheme(theme) {
       const t = valid.includes(theme) ? theme : "light";
+      document.documentElement.setAttribute("data-theme", t);
+      if (document.documentElement) {
+        document.documentElement.classList.remove("dark-amber", "dark-purple");
+        if (classMap[t]) document.documentElement.classList.add(classMap[t]);
+      }
       if (document.body) {
         document.body.classList.remove("dark-amber", "dark-purple");
         if (classMap[t]) document.body.classList.add(classMap[t]);
@@ -72,6 +89,9 @@
     }
     mql.addEventListener('change', (e) => {
       if (!localStorage.getItem("theme")) applyTheme(e.matches ? "purple" : "light");
+    });
+    window.addEventListener('storage', (e) => {
+      if (e.key === 'theme' && e.newValue) applyTheme(e.newValue);
     });
 
     if (toggle) {
