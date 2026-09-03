@@ -39,7 +39,7 @@
   </a>
 </nav>
 
-<button id="theme-toggle" class="theme-float" aria-label="Toggle theme" title="Toggle theme">☼</button>
+<button id="theme-toggle" class="theme-float" aria-label="Toggle theme" title="Toggle theme">☀</button>
 
 <footer class="site-footer">
   &copy; {{ site.time | date: "%Y" }} Satya Dileep Kumar Thotakura
@@ -48,7 +48,7 @@
 <script>
   (function () {
     const toggle = document.getElementById("theme-toggle");
-    const labels = { amber: "☼", purple: "♾" };
+    const labels = { amber: "☀", purple: "☾" };
     const classMap = { amber: "dark-amber", purple: "dark-purple" };
     const valid = Object.keys(classMap);
 
@@ -62,8 +62,16 @@
       localStorage.setItem("theme", t);
     }
 
+    const mql = window.matchMedia('(prefers-color-scheme: dark)');
     const saved = localStorage.getItem("theme");
-    applyTheme(saved || "amber");
+    if (!saved && mql.matches) {
+      applyTheme("purple");
+    } else {
+      applyTheme(saved || "amber");
+    }
+    mql.addEventListener('change', (e) => {
+      if (!localStorage.getItem("theme")) applyTheme(e.matches ? "purple" : "amber");
+    });
 
     if (toggle) {
       toggle.addEventListener("click", () => {
