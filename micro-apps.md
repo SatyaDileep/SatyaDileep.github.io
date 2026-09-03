@@ -1,7 +1,10 @@
 ---
 layout: default
 title: Micro-Apps
-permalink: /micro-apps/
+permalink: /product-portfolio/
+redirect_from:
+  - /micro-apps/
+  - /micro-apps
 ---
 
 <div class="page-header">
