@@ -40,7 +40,8 @@ AI Product Management, Generative AI, Agentic AI, Prompt Engineering, Product St
 
 **Infinity**
 
-- **AI Designer Roadmap:** Owned product roadmap for AI Designer - continuously validated ideas with stakeholders, prioritized backlog against strategic themes, and delivered features in Infinity 24.2. Coordinated with Blueprint team for cross-product adoption.
+- **Generative AI in App Studio (GenAI Connect):** Led the product vision for embedding Generative AI into Pega App Studio - owned the GenAI Connect rule type and evolved it into document-processing AI use cases, boosting customer adoption of the Pega platform.
+- **AI Designer:** Drove the vision and roadmap for AI Designer, delivering features in Infinity 24.2 and coordinating cross-product adoption with the Blueprint team, establishing GenAI as a strategic platform pillar.
 - **SLA Queue Processor:** Took engineering leadership end-to-end - architected the implementation strategy, coordinated with Engine and Case Management teams to resolve technical blockers, and delivered the feature to completion. Drove customer adoption with usage exceeding 1 lakh queue entries in production workflows.
 
 ### Principal Software Engineer (Pegasystems, Hyderabad, India)
@@ -82,17 +83,16 @@ Key developer for Dashboards, Reports, and Charts modules in MasterCraft Service
 - **Agentic AI Hackathon Runner-Up (Airtribe x PineLabs):** Prototyped a gamified payment gateway integration using advanced Agentic AI capabilities, securing runner-up among 20+ teams.
 - **SuperHack 2025, Global Top 100:** Developed the "MSP Profitability Agent," an autonomous operational efficiency agent competing globally in advanced multi-agent system design.
 - **Google GenAI Exchange Hackathon:** Architected and deployed the "LVX Agentic Hub," a multi-agent investment evaluation platform built on Google Cloud.
-- **Prompt Engineering Workshop Series:** Designed and delivered workshops for 15+ Product Managers on prompt engineering and GenAI capabilities. Recognized as organizational SME across product and engineering.
-- **GenAI Evangelism:** Presented at company-wide GenAI Innovators Showcase (3 sessions). Demonstrated A2A agent orchestration at AI Fusion Fest and Technovate, earning leadership recognition.
+- **Prompt Engineering & GenAI Enablement:** Designed and delivered workshops for 15+ Product Managers, recognized as organizational SME. Presented at company-wide GenAI Innovators Showcase (3 sessions); demonstrated A2A orchestration at AI Fusion Fest and Technovate.
 - **API Council Membership:** Active contributor to API design governance (Nov 2022-present), reviewing and approving cross-service API specifications for the platform.
 
 ---
 
 ## Product Portfolio
 
-- **Content Crafting Wand for LinkedIn** — Privacy-first, open-source authoring suite for feed-accurate previews entirely in-browser with user-owned keys; validated through organic adoption. funny-belekoy-39b0f8.netlify.app
-- **DocBridge - One Upload Layer for India** — Citizen-centric upload layer for Indian government portals (UPSC, Vahan, EPFO) integrating DigiLocker with on-device processing; web app + Chrome extension. incredible-taffy-db08a6.netlify.app
-- **Pregnancy Blossom Journal** — Privacy-first offline PWA for expectant families - week-by-week milestones and on-device AI reflections; empathy-driven keepsake with backup and print support. pregnancy-blossom-journal.netlify.app
+- **Content Crafting Wand for LinkedIn** — Privacy-first, open-source authoring suite for feed-accurate previews with user-owned keys; validated through organic adoption. funny-belekoy-39b0f8.netlify.app
+- **DocBridge - One Upload Layer for India** — Citizen-centric upload layer for Indian government portals integrating DigiLocker with on-device processing; web app + Chrome extension. incredible-taffy-db08a6.netlify.app
+- **Pregnancy Blossom Journal** — Privacy-first offline PWA for expectant families; week-by-week milestones and on-device AI reflections. pregnancy-blossom-journal.netlify.app
 
 ---
 
