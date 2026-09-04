@@ -40,9 +40,9 @@ AI Product Management, Generative AI, Agentic AI, Prompt Engineering, Product St
 
 **Infinity**
 
-- **Generative AI in App Studio (GenAI Connect):** Led the product vision for embedding Generative AI into Pega App Studio - owned the GenAI Connect rule type and evolved it into document-processing AI use cases, boosting customer adoption of the Pega platform.
+- **Accelerating Platform with Generative AI:** Led the product vision for embedding GenAI into Pega App Studio - owned the GenAI Connect rule type and evolved it into document-processing AI use cases, boosting customer adoption of the Pega platform.
 - **AI Designer:** Drove the vision and roadmap for AI Designer, delivering features in Infinity 24.2 and coordinating cross-product adoption with the Blueprint team, establishing GenAI as a strategic platform pillar.
-- **SLA Queue Processor:** Took engineering leadership end-to-end - architected the implementation strategy, coordinated with Engine and Case Management teams to resolve technical blockers, and delivered the feature to completion. Drove customer adoption with usage exceeding 1 lakh queue entries in production workflows.
+- **SLA Queue Processor:** Took end-to-end ownership - architected the implementation strategy, coordinated with Engine and Case Management teams to resolve technical blockers, and delivered the feature to completion. Drove customer adoption with usage exceeding 1 lakh queue entries in production workflows.
 
 ### Principal Software Engineer (Pegasystems, Hyderabad, India)
 *Mar 2021 – May 2023*
