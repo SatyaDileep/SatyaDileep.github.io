@@ -11,7 +11,7 @@ permalink: /linkedin/
 .linkedin-toolbar{display:flex;gap:0.6rem;flex-wrap:wrap;align-items:center;margin:1rem 0 1.1rem}
 .search-wrap{flex:1;min-width:220px;position:relative}
 .search-wrap input{width:100%;padding:0.65rem 0.9rem 0.65rem 2.2rem;border-radius:999px;border:1px solid var(--border);background:rgba(255,255,255,0.7);backdrop-filter:blur(8px);font-size:0.9rem;color:var(--text);outline:none}
-body.dark .search-wrap input{background:rgba(255,255,255,0.06);border-color:rgba(255,255,255,0.08)}
+body.dark .search-wrap input,body.dark-amber .search-wrap input,body.dark-purple .search-wrap input{background:rgba(255,255,255,0.06);border-color:rgba(255,255,255,0.08)}
 .search-wrap::before{content:'⌕';position:absolute;left:12px;top:50%;transform:translateY(-50%);color:var(--muted);font-size:1rem}
 .count-pill{font-size:0.75rem;font-weight:700;padding:0.4rem 0.8rem;border-radius:999px;background:var(--primary-dim);color:var(--primary);white-space:nowrap}
 .tag-row{display:flex;gap:0.4rem;flex-wrap:wrap;margin:0 0 1rem}
@@ -19,7 +19,7 @@ body.dark .search-wrap input{background:rgba(255,255,255,0.06);border-color:rgba
 .tag-pill.active{background:var(--primary);color:#fff;border-color:var(--primary)}
 .ln-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:0.9rem}
 .ln-card{background:rgba(255,255,255,0.62);backdrop-filter:blur(12px) saturate(1.15);border:1px solid rgba(255,255,255,0.6);border-radius:16px;padding:1.1rem;transition:var(--transition);cursor:pointer;display:flex;flex-direction:column;min-height:160px}
-body.dark .ln-card{background:rgba(22,18,36,0.45);border-color:rgba(255,255,255,0.07)}
+body.dark .ln-card,body.dark-amber .ln-card,body.dark-purple .ln-card{background:rgba(22,18,36,0.45);border-color:rgba(255,255,255,0.07)}
 .ln-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-lg);border-color:var(--primary)}
 .ln-card h3{margin:0 0 0.4rem;font-size:0.95rem;line-height:1.35}
 .ln-card p{margin:0;color:var(--muted);font-size:0.82rem;line-height:1.5;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;flex:1}
