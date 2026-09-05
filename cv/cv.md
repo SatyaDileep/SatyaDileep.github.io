@@ -56,7 +56,7 @@ AI Product Management, Generative AI, Agentic AI, Prompt Engineering, Product St
 *Sep 2017 – Mar 2021*
 
 - **Pega Process Fabric:** Owned critical modules including Registration, Security, and API layers in Pega Process Fabric — the enterprise integration layer that weaves together disparate systems without custom code. Scaled the platform to production across 20+ enterprise clients with thousands of registered applications, ensuring reliability and zero critical defects.
-- **Case Management Platform:** Contributed to core case management features including SLA engine APIs and task board orchestration.
+- **Case Management:** Developed and shipped new smart shapes now widely used in workflows, and enhanced engine APIs to improve performance by 30%.
 - **Collaboration Platform:** Delivered task board and collaboration improvements that enhanced team productivity and transparency.
 
 ### Senior Development Engineer (Pramati Technologies, Hyderabad, India)
