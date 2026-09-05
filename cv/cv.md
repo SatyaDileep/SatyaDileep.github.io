@@ -99,11 +99,11 @@ Key developer for Dashboards, Reports, and Charts modules in MasterCraft Service
 ## Certifications
 
 **AI & Generative AI**
-- OpenAI GPTs: Creating Custom AI Assistants — Vanderbilt University, Dec 2025
+- Generative AI: Introduction & Applications — IBM, Jun 2025
+- Google Prompting Essentials — Google, Aug 2025
+- Introduction to Gemini Enterprise — Google Cloud, Sep 2025
+- OpenAI GPTs: Creating Custom AI Assistants — Vanderbilt University, Nov 2025
 - Agentic AI and AI Agents: A Primer for Leaders — Vanderbilt University, Dec 2025
-- Google Prompting Essentials — Google, Dec 2025
-- Introduction to Gemini Enterprise — Google Cloud, Dec 2025
-- Generative AI: Introduction & Applications — IBM, Dec 2025
 
 **Professional (Pegasystems)**
 - Certified Senior System Architect (CSSA) — Dec 2019
